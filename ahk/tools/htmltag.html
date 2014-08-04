@@ -1,0 +1,80 @@
+---
+layout: page
+title: HTMLTag
+tagline: v ----
+ghlink: https://github.com/aviaryan/autohotkey-scripts/blob/master/Tools/HtmlTag.ahk
+---
+
+<a href="http://www.autohotkey.com/board/topic/95319-">Ahk Topic </a><br />
+<a href="https://github.com/avi-aryan/Avis-Autohotkey-Repo/blob/master/Tools/HtmlTag.ahk">DOWNLOAD </a><br /><br />
+<strong>HTML Tagger</strong> is a tool to add HTML, bb-code and custom tags or wrappings to selected text on the screen.<br />
+It is intutive , fast and powerful.
+<br />
+<br />
+
+<h3>FEATURES</h3>
+<ul>
+<li>No need for shortcuts, you can fastly cycle between tags/wrappings using a single Ctrl+H<br />
+    This feature is same as the one innovated in <a href="http://avi-win-tips.blogspot.com/p/clipjump.html">Clipjump</a>.
+<li>Support for unlimited tags/wrappings.
+<li>Very fast switching through tags/wrappings which can be added/deleted at runtime
+<li>You can determine where should the cursor be placed after insertion of tags so that it gets easy to append custom
+information.
+<li>Open source and free.
+</ul>
+<br />
+
+<h3>USAGE</h3>
+<ol>
+<li>Select Text you want to apply tags to.
+<li>Hold Ctrl, then tap H to cycle between different Items OR tags available
+<li>Release Ctrl to apply the current selected tag.
+<li>While holding Ctrl, tap X to cancel Tag operation
+<li>While holding Ctrl, tap D to delete Tooltip active tag/wrapping item.
+  </ol>
+Use Win+H to show a GUI which will enable you to add more tag items to the program.<br />
+  The item added here is saved in a HTMLTag.ini file for future use.
+  <br /><br />
+  <h3>HtmlTag Adder GUI Options</h3>
+  <ul>
+  <li><b>LABEL</b>
+	<p class="tab">The name by which an item will be identified (Shown in Tooltip)</p>
+  <li><b>MASK</b>
+	<p class="tab">The MASK that you want the program to impose on the selected text.<br />
+	eg ->		&lt;h1&gt;|&lt;/h1&gt;<br />
+	Here 	|	 is the Delimiter and will symbolize selected text due to the <code class="Syntax">TEXT POINT</code> Param</p>
+  <li><b>TEXT POINT</b>
+	<p class="tab">The Delim which you want to be replaced by selected text. <br />
+	This may seem a useless option as it will more often be 1. <br />
+	Use <code class="Syntax">TEXT POINT = 0</code> to make selected Text appear before tag items.</p>
+
+<li><b>CARET INSERTION POINT</b>
+	<p class="tab"I>f 0 , Caret (Cursor) is placed at the end of tag after a Tag is applied  <br />
+	If 1 or more, the Caret is placed that many points away from the right of Inserted selected text. <br />
+	Use Caret=1 to place the Caret right after the selected text tagged by the program.<br />
+      If you don't understand , better try it.</p>
+
+<li><b>DELIMITER </b>
+	<p class=tab>The Delimiter used to separate MASK items. <br />
+	Default = 	|</p>
+  </ul>
+
+  <br />
+
+<h4>Include Files</h4>
+<a href="http://www.autohotkey.com/board/topic/95162-">AhkIni.ahk</a><br />
+<a href="https://github.com/avi-aryan/Clipjump/blob/master/ClipjumpCommunicator.ahk">Clipjump Communicator.ahk (OPTIONAL)</a>
+<br /><br />
+
+<h4>Some Examples</h4>
+<ul>
+    <li>Commenting text in Autohotkey scripts
+        <p class=tab>Using <code class="Syntax">Mask = /*|*/</code> and all other options default, the selected text can be converted into an
+    Autohotkey Block comment.</p>
+    <li>Inserting code in BB-Code Forums (like Autohotkey)
+        <p class=tab>Using <code class="Syntax">Mask = [c]|[/c]</code> and all other options default</p>
+    <li>Commenting text (inline) in Autohotkey
+        <p class=tab>Using <code class="Syntax">Mask = ;|</code> and all other options default</p>
+</ul>
+
+<br />

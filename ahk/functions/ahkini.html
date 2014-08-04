@@ -1,0 +1,95 @@
+---
+layout: page
+title: AhkIni()
+tagline: Fast Ini lib with standard comment-linked support
+ghlink: https://github.com/aviaryan/autohotkey-scripts/blob/master/Functions/AhkIni.ahk
+highlight: 1
+brushes: ['ahk.min', 'ini']
+hltheme: github
+---
+
+<a href="http://www.autohotkey.com/board/topic/95162-">Ahk Board Topic</a>
+<br /><br />
+Class to perform Ini reading and writing operations<br />
+Created as a complete replacement of the default Ini commands<br /><br />
+
+<ul><li>Much much faster than the default Ini operations.
+    <li>Support for reading/writing linked comments to keys and sections.
+    <li>Same syntax as the default Ini commands.</ul><br />
+
+<h4>Example of an Ini created through the lib</h4>
+
+<pre><code class="language-ini">
+[section1]
+;section1 comment
+key1 = hithere_key1
+;keycomment
+;line2
+;line3
+key2 = hithere_key2
+;keycomment2
+key3 = hithere_key3
+ 
+[section2]
+;section2 comment
+key1 = hithere2
+;keycomment2
+</code></pre>
+
+<h4>The code</h4>
+<pre><code class="language-autohotkey">
+SetWorkingDir,% A_scriptdir
+ 
+Ini := new AhkIni("black2.ini")		;will create new ini if nothing exists
+ 
+ini.write("section1", "key1", "hithere_key1", "keycomment`nline2`nline3")
+ini.write("section1", "key2", "hithere_key2", "keycomment2", "section1 comment")
+ini.write("section1", "key3", "hithere_key3")	;no comment for this key
+ini.write("section2", "key1", "hithere2", "keycomment2", "section2 comment")
+ 
+msgbox,% ini.read("section1", "key1", key, sec) "`n`n" key "`n`n" sec
+msgbox,% "Section1 keys are `n`n" ini.read("section1")		;read the keys in section 1
+msgbox,% "Sections in the ini are`n`n" ini.read()
+;ini.delete("section1", "key1")		;delete the above read key
+ 
+ini.Save()
+ 
+#include, AhkIni.ahk
+</code></pre>
+    <br />
+
+    <hr><br />
+
+<a name=methods>
+<h3>Methods</h3>
+</a>
+<ul>
+<li>New(Inifile)
+    <p class="tab">Sets a pointer to an Ini settings file.<br />
+    The Ini file is created if it doesn't exists.</p>
+
+<li>.Read(Section="", Key="", Byref Key_com="", ByRef Sec_com="")
+    <p class="tab">Reads value of the Key contained in a Section to the outputvar.<br />
+    If the <b>Byref</b> parameters are specified, the <b>linked</b> Key comments (Key_com) and Section comments (Sec_com) are
+     also read.<br />
+     If Section="" i.e. the first param is unspecified, the list of sections in the ini will be returned in a fashion similar to the AHK_l
+     IniRead command.<br />
+     If Key="" , the list of Keys in the specified Section is returned.</p>
+
+<li>.Write(Section, Key, Value, Key_com="", Sec_com="")
+    <p class=tab>Write values to a key, creating the key and section if necessary.<br />
+    The params <code class="Syntax">Key_com</code> and <code class="Syntax">Sec_com</code> are for key and section comments.<br />
+    If these params are omitted, then the original corresponding comment is left unchanged but if<br />
+    these params are called as a Space <code class="Syntax">(" " or A_space)</code>, then the linked comment for the section/key is
+    deleted and changed to null.</p>
+
+<li>.Delete(Section="", Key="")
+    <p class="tab">Delete keys or sections from the ini.<br />
+    If Key is omitted , the whole section is deleted.<br />
+    If Section is omitted , the whole Ini is deleted.</p>
+
+<li>.Save()
+   <p class="tab">Saves the changes made to the Ini made in memory to the file.<br />
+    Remember to call <code class="Syntax">.Save</code> after making the changes.</p>
+    </ul>
+    <br /><br />

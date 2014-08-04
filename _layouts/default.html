@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <title>{{ page.title }} &middot; {% if page.category == null %}{{ site.title }}{% else %}{{ page.category }}{% endif %}</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="{{ site.author.fullname }}">
+
+  {% if page.title == "Home" %}
+  <meta name="google-site-verification" content="{{ site.googleverify }}" />
+  {% endif %}
+  
+  <!-- fix multiple links -->
+  <link rel="canonical" href="{{ site.fullpath }}{{ page.url | replace:'index.html','' }}" />
+
+  <!-- icons -->
+  {% if page.favicon != null %}
+  <link rel="shortcut icon" href="favicon.ico" />
+  {% endif %}
+
+  <!-- HIGHLIGHTER SCRIPTS -->
+  {% if page.highlight != null %}
+  <link rel="stylesheet" href="/assets/prism/prism{% if page.hltheme == null %}{% else %}-{{page.hltheme}}{% endif %}.css"/>
+  <!-- <link rel="stylesheet" href="/assets/prism/prism-line-numbers.css"> -->
+  {% endif %}
+  
+  <link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/aviaryan" title="RSS feed" />
+  <link href="/assets/css/style.css" rel="stylesheet" />
+  <link href="/assets/css/colors-light.css" rel="stylesheet" />
+
+{% if page.rtype == "page" %}
+<style>
+#page {
+  width: 95%;
+  margin: auto;
+}
+#content {
+  /* margin: 0px 20px 10px 210px; /* width of sidebar is 180 */
+  margin-right: 30px;
+  margin-left: auto;
+  max-width: 1150px;
+  min-width: 780px;
+}
+</style>
+{% endif %}
+</head>
+
+<body>
+
+  <div id="page">
+
+    <div id="sidebar">
+      <nav id="navigation">
+        <ul>
+          <li><img src="/images/profile_128.png" height="100" width="100">
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Posts</a></li>
+          <li><a href="/ahk">Ahk scripts</a></li>
+          <li><a href="/softwares.html">Softwares</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="lbox">
+      {% if page.rtype != "post" %}
+        <h2>Latest Posts</h2>
+        <ul id="latestposts">
+        {% for post in site.posts limit:5%}
+         <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+      {% else %}
+        {% if page.category != null %}See more in <font class="heading">category <a href="/blog/categories.html#{{ page.category }}">{{ page.category }}</a></font><br><hr>{% endif %}
+        <h3>Tags available</h3>
+        <span id="leftinfo"><a href="/blog/tags.html#untagged">Untagged</a>
+        {% for tag in site.tags %}<a href="/blog/tags.html#{{ tag | first }}">{{ tag | first }}</a>
+        {% endfor %}
+        </span>
+      {% endif %}
+    </div>
+    </div>
+    
+    <!-- top right -->
+    <div id="topright">
+      <a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">
+      <span class="button github white">{% if page.ghlink != null %}<span class="symbol" style="background: #3470ae;">1</span> {% endif %}GitHub</span></a>
+      <a href="http://feeds.feedburner.com/aviaryan"><span class="button feeds white">Feed</span></a>
+    </div>
+
+    {% if page.rtype == "page" %}
+      {% capture conwidth %}80%;{% endcapture %}
+    {% endif %}
+
+    <div id="content" style="width: {{ conwidth }}">
+      <header id="header">
+        <div id="header_title">
+        <h1>{{ page.title }}</h1>
+        <span class="tagline"><small>{{ page.tagline }}</small></span>
+        <hr></div>
+      </header>
+      <br>
+    {% if page.rtype == null %}
+    <div id="data">
+      {{ content }}
+    </div>
+    {% else %}
+      {{ content }}
+    {% endif %}
+
+  {% if page.rtype == "post" %}
+    {% if page.nod == null %}
+      {% include disqus.html %}
+   {% endif %}
+  {% elsif page.rtype == "page" %}
+    {% if page.nod == null %}
+      {% include disqus_notauto.html %}
+    {% endif %}
+  {% endif %}
+    </div>
+
+  </div>
+
+  <footer id="footer">
+    <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.author.fullname }}. Powered by <a href="http://jekyllrb.com">Jekyll</a>, 
+    based on <a href="https://github.com/redwallhp/solar-theme-jekyll">Solar theme</a></p>
+  </footer>
+
+<!-- JS AT THE END FOR FASTER LOAD -->
+{% if page.highlight != null %}
+<script src="/assets/prism/prism-core.min.js"></script>
+<!-- <script src="/assets/prism/prism-line-numbers.min.js"></script> -->
+
+{% for brush in page.brushes %}
+  <script src="/assets/prism/prism-{{ brush }}.js"></script>
+{% endfor %}
+{% endif %}
+
+{% include statcounter.html %}
+</body>
+</html>

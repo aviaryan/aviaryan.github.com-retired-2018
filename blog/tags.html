@@ -1,0 +1,34 @@
+---
+layout: default
+title: Posts Tags
+nod: 1
+---
+
+<a name="untagged"></a><h1>UnTagged</h1>
+<ul>
+{% for post in site.posts %}
+{% for tag in post.tags %}
+{% capture tagname %}{{ tag }}{% endcapture %}
+{% endfor %}
+{% if tagname == null %}
+<li><a href="{{ post.url }}">{{ post.title }}</a><font size=-1>[ {{ post.date | date_to_string }} ]</font></li>
+{% endif %}
+{% assign tagname = null %}
+{% endfor %}
+</ul>
+<br>
+
+{% for tag in site.tags %}
+{% capture catname %}{{ tag | first }}{% endcapture %}
+<a name="{{ catname }}"></a><h1>{{ catname }}</h1>
+<ul>
+	{% for post in site.tags[catname] %}
+    <li>
+          <a href="{{ post.url }}">
+            {{ post.title }}</a>
+            <font size=-1>[ {{ post.date | date_to_string }} ]</font>
+      </li>
+    {% endfor %}
+</ul>
+<br>
+{% endfor %}

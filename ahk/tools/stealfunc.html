@@ -1,0 +1,139 @@
+---
+layout: page
+title: StealFunc
+tagline: v 0.12
+ghlink: https://github.com/aviaryan/autohotkey-scripts/blob/master/Tools/stealFuncfromLib.ahk
+highlight: 1
+brushes: ['ahk.min']
+hltheme: github
+---
+
+<a href="http://www.autohotkey.com/board/topic/100178-">Autohotkey.com Topic </a><br />
+<a href="http://ahkscript.org/boards/viewtopic.php?f=6&t=1195">AhkScript Topic</a><br>
+<a href="https://github.com/avi-aryan/autohotkey-scripts/blob/master/Tools/stealFuncfromLib.ahk">DOWNLOAD</a><br /><br />
+
+<div class="language-autohotkey">
+
+<strong>StealFunc</strong> is a function-oriented script (tool) to extract only the required functions from an ahk library .
+It recursively processes the library file to only extract functions that are minimally needed. <br>
+From v0.1 , it has feature to scan a autohotkey script snippet and extract the foreign functions that are used in that script from another given script.<br>
+<br>
+The script is presented as a function.
+  
+<a name=params></a>
+<pre><code>
+return_script := stealFunc(function_list, function_file, is_list) 
+;EXAMPLE
+Clipboard := stealFunc("Gdip_Startup`nGdip_SetBitmaptoClipboard`nGdip_CreateBitmapFromFile`nGdip_DisposeImage", "path_to_gdip_lib", 1)
+</code></pre>
+The first parameter '<a href=#fl>function_list</a>' stores a list of functions or a working ahk script snippet whose used function are to be extracted.<br>
+The second parameter 'function_file' is the file from which functions are going to be extracted.<br>
+The third parameter 'is_list' should be 1 if 'function_list' has a list of functions or 0 otherwise.<br><br><br>
+  
+The script also has a gui added for user convenience and can be commented out anytime.<br>
+Below are the screenshots of the GUI in action.<br>
+<img src="https://dl.dropboxusercontent.com/u/116215806/Products/MoreAHK/stealfunc.png"><br>
+<img src="https://dl.dropboxusercontent.com/u/116215806/Products/MoreAHK/stealfunc_list.png"><br>
+<br>
+
+<a name=fl><h3>function_list</h3></a>
+As said above, function_list can be a list OR a valid snippet of an Autohotkey script.<br><br>
+EXAMPLE for function_list as a list - <br>
+<pre><code>
+t =
+(
+Gdip_Startup
+Gdip_CreateBitmapFromFile
+Gdip_DisposeImage
+Gdip_shutdown
+gdip_setbitmaptoclipboard
+)
+output := stealFunc(t, "S:\Portables\AutoHotkey\My Scripts\ClipStep\lib\Gdip_All.ahk", 1) 	; t is a list so is_list=1
+gui, add, edit, h600 w800 +multi, % output
+gui, show
+</code></pre>
+
+<br>
+EXAMPLE for function_list as a snippet - <br>
+<pre><code>
+;Gdip_SetImagetoClipboard()
+;Sets some Image to Clipboard
+
+Gdip_SetImagetoClipboard( pImage ){
+  ;Sets some Image file to Clipboard
+  PToken := Gdip_Startup()
+  pBitmap := Gdip_CreateBitmapFromFile(pImage)
+  Gdip_SetBitmaptoClipboard(pBitmap)
+  Gdip_DisposeImage( pBitmap )
+  Gdip_Shutdown( PToken)
+}
+
+;Gdip_CaptureClipboard()
+; Captures Clipboard to file
+
+Gdip_CaptureClipboard(file, quality){
+  PToken := Gdip_Startup()
+  pBitmap := Gdip_CreateBitmapFromClipboard()
+  Gdip_SaveBitmaptoFile(pBitmap, file, quality)
+  Gdip_DisposeImage( pBitmap )
+  Gdip_Shutdown( PToken)
+}
+</code></pre>
+The above valid code can serve as a input in the function_list parameter when you change the 3rd parameter is_list to 0.<br>
+The stealFunc function scans through the snippet and lists the used User-defined functions.
+It then finds them in the Input script file (here the Gdip.ahk) and copies them out if they are found. It rescans and rescans all the 
+<a href="http://www.autohotkey.com/board/topic/29449-gdi-standard-library-145-by-tic/">gdip.ahk</a> functions so that the functions they are dependent on are also 
+extracted.<br>
+The Snippet can be any valid AHK Script and the stealFunc function will always scan it and find the used functions in the Input script file.
+<br><br>
+
+
+<h3>Example 2</h3>
+Using the <a href="https://code.google.com/p/mm-autohotkey/source/browse/trunk/Form/inc/RichEdit.ahk?r=1122">richEdit</a> library, I am running the following code.
+<pre><code>
+Gui, +LastFound
+hwnd := WinExist()
+hRichEdit := RichEdit_Add(hwnd, 5, 5, 200, 300)
+Gui, Show, w210 h310
+return
+</code></pre>
+With stealFunc, you can extract only the function from the lib which are required to run <code>RichEdit_Add</code>. So the code goes -
+
+<pre><code>
+t =
+(
+Gui, +LastFound
+hwnd := WinExist()
+hRichEdit := RichEdit_Add(hwnd, 5, 5, 200, 300)
+Gui, Show, w210 h310
+return
+)
+output := stealFunc(t, "C:\Users\Avi\Desktop\RichEdit.ahk", 0)  ; is_list = 0
+gui, add, edit, h600 w800 +multi, % output
+gui, show
+</code></pre>
+The output you get is of 74 lines, much less than 2100 lines. 
+<br><br>
+
+
+<h3>Example 3</h3>
+<pre><code>
+t =
+(
+  curvolume := va_getmastervolume()
+  va_setmastervolume(100.0)
+  SAPI.Speak(Speech)
+  va_setmastervolume(curvolume)
+)
+</code></pre>
+Using <a href="http://www.autohotkey.com/board/topic/21984-">VA (VistaAudio)</a>, the following code steals the minimal function needed for the above code to work.
+<pre><code>
+output := stealFunc(t, "S:\Portables\AutoHotkey\My Scripts\Comuntiy Packages\VA-2.2\VA.ahk", 0)  ; not list so is_list=0
+gui, add, edit, h600 w800 +multi, % output
+gui, show
+</code></pre>
+The output is 158 lined, certainly better than 880 lines.
+
+</div>
+
+<br><br>Comments and bugs are appreciated!

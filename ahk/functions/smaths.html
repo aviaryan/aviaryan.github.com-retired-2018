@@ -1,0 +1,233 @@
+---
+layout: page
+title: Scientific Maths
+tagline: Collection of infinite-precision mathematics functions
+ghlink: https://github.com/aviaryan/autohotkey-scripts/blob/master/Functions/Maths.ahk
+highlight: 1
+brushes: ['ahk.min']
+hltheme: github
+---
+
+<a href="http://www.autohotkey.com/board/topic/93516-">Ahk Topic</a><br />
+<a href="https://github.com/aviaryan/autohotkey-scripts/blob/master/Functions/files/Maths-Changelog.txt">ChangeLog</a><br /><br>
+
+<pre class=Syntax><strong>List</strong>
+<ul><li><a href=#slv>SM_Solve(expression, ahk=false)</a>
+<li><a href=#eval>SM_Add(number1, number2)</a>
+<li><a href=#md>SM_Multiply(number1, number2)</a>
+<li><a href=#md>SM_Divide(number1, number2, length=10)</a>
+<li><a href=#pmt>SM_UniquePmt(series, Index)</a>
+<li>SM_fact(number)
+<li>SM_Greater(number1, number2, trueforequal)
+<li>SM_Prefect(number)
+<li>SM_Pow(number, Power)
+<li>SM_Mod(Dividend, Divisor)
+<li>SM_Round(number, Decimals)
+<li>SM_Floor(Number)
+<li>SM_Ceil(Number)
+<li>SM_ToExp(Number, decimals)
+<li>SM_FromExp(sci_number)
+<li>SM_e(N, auto=true)
+<li>SM_Number2base(N, base=16)
+<li>SM_Base2Number(H, base=16)
+</ul></pre><br />
+
+<div class="language-autohotkey">
+
+<h4><a name=slv>SM_Solve(expression, ahk=false)</a></h4>
+<ul>
+<li>Solves a Mathematical expression in a string . The <code>ahk</code> param is to make SM_Solve() use the AutoHotkey's +-*/ instead of its own. Enable it if you are 
+    sure that the calculation you are doing can be calculated with AHK only. It may give faster results.
+<li>SM_Solve() supports infinetly large numbers and its +-/* is powered by the respective custom functions (SM_Add, SM_Multiply, SM_Divide).
+<li>It supports functions (default and user-defined) , expressions inside expressions and nesting via (...) brackets.
+<li>You can use ^ or ** calulate power and ! to calculate factorial on the go.
+<li>Scientific notation numbers can also be used as they are in the function.
+<li>SM_Solve() solves expressions in the traditional left-to-right format for the operators +-*/ and not in the BODMAS format. Use nesting to achieve your desired 
+    results.
+<li>Use p or c for Permuation or Combination. (4c2 * 5c3)
+<li>Users are <b>highly recommended</b> to use this function to solve expressions rather than using the individual functions in this library.
+<li>Users are recommended to use Nesting via (...) brackets wherever necessary.
+</ul>
+
+<pre><code>
+msgbox % SM_Solve("4 + ( 2*( 3+(4-2)*round(2.5) ) ) + (5c2)**(4c3)")
+msgbox % "The gravity on earth is: " SM_Solve("(6.67e-11 * 5.978e24) / 6.378e6^2")
+
+var = sqrt(10!) - ( 2**5 + 5*8 )
+msgbox,% SM_Solve(var)
+;In the above example, var has the equation.
+</code></pre>
+
+<ul>
+<li>You can also use global variables inside SM_Solve() . <b>These variables must be surrounded by % to make SM_Solve() see them as variables</b>. 
+Below is an example to demonstrate the purpose. 
+</ul>
+
+<pre class="line-numbers"><code>
+global h := "6.6260695729e-34"
+global c := "299792458"
+global lemda := "5400e-10"
+
+msgbox % ans := SM_Solve("%h%*%c%\%lemda%") ;note the %..% here
+
+msgbox % SM_ToExp(ans)                      ;converting to Exponential form
+</code></pre>
+
+<ul><li>To use functions with alphabetic identifiers such as e, c or p , enclose them with %...% . See the following example -</ul> 
+<pre><code>
+msgbox % SM_Solve(" %sin(1.59)% e %log(1000)% ")
+;The above is equal to  sin(1.59) e (log(1000))
+;that is - sin(1.59) * 10^log(1000)
+
+msgbox % SM_Solve( " 4^sin(3.14) + 5c%log(100)% + %sin(1.59)%e%log(1000)% + log(1000)! " )
+;As you see , the identifiers ^ and ! dont require functions in %....% , though you can always use the %...% if you wish.
+</code></pre>
+
+<br>
+
+<!-- end of solve -->
+
+<h4><a name=eval>SM_Add()</a></h4>
+<ul><li>Adds two infinetly large numbers . Supports decimal and negatives.
+<li>Please feed numbers into the function as strings (See below)</ul>
+
+<pre><code>
+number1 = 3292389200000000000382398232309.239230923092302390239230
+number2 = 239209239230290239239049349309403434.34930909090
+Msgbox,% SM_Add(number1 ,number2)
+Msgbox,% SM_Add(number1, "-" number2)   ;Notice the use of "-" to subtract
+
+;Notice the use of = in place of :=
+</code></pre>
+<BR>
+
+<h4><a name=md>SM_Multiply(n1, n2)<br>SM_Divide(dividend, divisor, length=10)</a></h4>
+<ul><li>Feed large numbers as Strings
+<li>Better recommended to keep the <code>length</code> param of SM_Divide as 10 which is default. If you want more preciseness you can move it to anything.
+<li>SM_Divide() has smartround which means something like 0.000000003433423 with a length 3 will not give 0.000 but 0.00000000343</ul>
+
+<pre><code>
+MsgBox,% SM_Divide("434343455677690909087534208967834434444.5656", "8989998989898909090909009909090909090908656454520", 10)
+msgbox,% SM_Divide("22","7",100)  ;--- 100 Decimal places
+MsgBox,% SM_Multiply("111111111111111111111111111111111111111111.111","55555555555555555555555555555555555555555555.555")
+</code></pre><br />
+
+<h4><a name=pmt>SM_UniquePMT(series, Index, delimiter=",")</a></h4>
+<ul><li>Gives unique Permuation for a given Index where Index < No of Permutations
+<li>Make Index = All to list down all possible permutations</ul>
+
+<pre><code>
+msgbox,% SM_UniquePMT("avi,annat,koiaur,aurkoi", "All")  ;no of permutation =  24
+msgbox,% SM_UniquePMT("abd", 3);no of permutation = 6
+</code></pre><br />
+
+<h4>SM_fact(number)</h4>
+Returns factorial of any natural number
+
+<pre><code>
+msgbox % SM_fact(50)
+</code></pre><br>
+
+<h4>SM_Greater(number1, number2, trueforequal=true)</h4>
+Returns 1 (true) if number1 is greater than number2<br>
+If 'trueforequal' is true , it returns 1 also when <code>number1 = number2</code>
+
+<pre><code>
+msgbox % SM_Greater("2382938239832923", "23923892323232.23923323", true)
+
+if SM_Greater("23923892323", "23823923923")
+    msgbox True
+else
+    msgbox False
+</code></pre><br>
+
+<h4>SM_Prefect(number)</h4>
+Returns a number in perfect form removing all extra zeroes and decimals
+
+<pre><code>
+msgbox % SM_Prefect("00.0022323238230000")
+</code></pre><br>
+
+<h4>SM_Pow(number, Power)</h4>
+Returns 'number' to the power 'Power'<br>
+Suitable for large numbers.
+
+<pre><code>
+msgbox % SM_Pow("121", 20)
+
+if SM_Greater(SM_Pow("123", 10) , "23823923923")
+   msgbox True
+else
+    msgbox False
+</code></pre><br>
+
+<h4>SM_Mod(number1, number2)</h4>
+Mod of number1 with respect to number2
+
+<pre><code>
+msgbox % SM_Mod("122304393493", "232434")
+
+if ( SM_Mod("1202323023923023022", 2) == "0" )
+    msgbox, The number is even
+else
+    msgbox, The number is odd
+</code></pre><br>
+
+<h4>SM_Round(number, decimals)</h4>
+Rounds a number to the specified decimal numbers.<br>
+Doesnt't support negative value of <code>decimals</code> i.e. no trimming before decimal is supported.
+
+<pre><code>
+msgbox % SM_Round("23023923023920332.239239232323129", 5)
+</code></pre><br>
+
+<h4>SM_Floor(number) || SM_Ceil(number)</h4>
+Returns Floor() || Ceil() of a number.<br>
+To know about these functions, see Autohotkey help file
+
+<pre><code>
+msgbox % SM_Floor("2323023902323.210")
+msgbox % SM_Ceil("-23023023.23")
+</code></pre><br>
+
+<h4>SM_ToExp(number, decimals)</h4>
+Returns any number in exponential form like<br>
+<code>1.6e9</code><br>
+The decimals param rounds of the the scientific number to have as many decimals you like.
+
+<pre><code>
+msgbox % SM_ToExp("994556989569454.2334423723900")
+;returns --
+;9.9455698956945423344237239e14
+</code></pre><br>
+
+<h4>SM_FromExp(sci_num)</h4>
+Converts a number from scientific number format to a real number.
+
+<pre><code>
+Msgbox % SM_fromexp("6.45423e10")
+;64542300000
+</code></pre><br>
+
+<h4>SM_e(N, auto=1)</h4>
+Returns 'e' (exponential factor) to the power 'N' . <code>auto = 1</code> enables smart rounding for faster results . Call auto as false (0) for totally accurate 	 	results. (may be slow).
+
+<pre><code>
+msgbox % SM_e(10)
+;Returns --
+;22026.46579480710259971265343113213982666963239374053579059805991564763081440882382141001251466332787884202070175527338097612546879579978525390625
+</code></pre><br>
+
+<h4>SM_Number2Base(N, base=16)<br>SM_Base2Number(H, base=16)</h4>
+SM_Number2Base converts number <code>N</code> to base <code>base</code><BR>
+SM_Base2Number converts number <code>H</code> in base <code>base</code> to a real number (which is in base 10).
+
+<pre><code>
+msgbox % t:=SM_Number2Base("10485761048", 2)  ;base 2
+msgbox % f:=SM_Number2base("10485761048", 32) ;base 32
+;now convert them back to numbers
+msgbox % SM_Base2Number(t, 2) "`n" SM_Base2Number(f, 32)
+</code></pre>
+</div>
+
+<br />

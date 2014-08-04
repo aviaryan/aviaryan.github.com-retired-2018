@@ -1,0 +1,31 @@
+---
+layout: default
+title: Blog Posts
+nod: 1
+---
+
+<table class="inline">
+<tr>
+<th width="100px"><b><a href="categories.html">Categories</a></b></th>
+{% for category in site.categories %}
+<td width="auto"><a href="/blog/categories.html#{{ category | first }}">{{ category | first }}</a></td>
+{% endfor %}
+</tr></table>
+
+<table class="inline">
+<tr>
+<th width="100px"><b><a href="tags.html">Tags</a></b></th>
+{% for tag in site.tags %}
+<td width="auto"><a href="/blog/tags.html#{{ tag | first }}">{{ tag | first }}</a></td>
+{% endfor %}
+</tr></table>
+<br>
+
+<div class="posts">
+<ul>
+  {% for post in site.posts %}
+    <li><font size=+1><a href="{{ post.url }}">{{ post.title }}</a>{% if post.category != null %} &middot; {{ post.category }} {% endif %}
+    	<font size=-1>[ {{ post.date | date_to_string }} ]</font></font></li>
+    {% endfor %}
+</ul>
+</div>

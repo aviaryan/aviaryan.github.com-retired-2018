@@ -1,0 +1,21 @@
+name: Avi Aryan
+markdown: redcarpet
+fullpath: http://aviaryan.github.io
+description: Personal Website
+baseurl: 
+permalink: /blog/:categories/:title.html
+title: Avi Aryan
+paginate: 10
+highlighter: null
+# pygments: false
+
+# More
+author:
+    fullname: Avi Aryan
+    twitter: aviaryan123
+    github: aviaryan
+    facebook: avi.aryan.ap
+
+googleverify: gC8gMLC1UpPDYi2y5KR_9Sq79n4TYMiQM7UcSvtyfms
+disqusid: avi-aryan-github
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
