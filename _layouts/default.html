@@ -6,6 +6,7 @@
   <title>{{ page.title }} &middot; {% if page.category == null %}{{ site.title }}{% else %}{{ page.category }}{% endif %}</title>
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="{{ site.author.fullname }}">
+  <link rel="author" href="https://plus.google.com/u/0/+{{ site.author.google }}/posts">
 
   {% if page.title == "Home" %}
   <meta name="google-site-verification" content="{{ site.googleverify }}" />
@@ -84,6 +85,7 @@
     <div id="topright">
       <a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">
       <span class="button github white">{% if page.ghlink != null %}<span class="symbol" style="background: #3470ae;">1</span> {% endif %}GitHub</span></a>
+      <span style="display: none;"><a href="https://plus.google.com/{{site.author.gplusid}}?rel=author">Google</a></span>
       <a href="http://feeds.feedburner.com/aviaryan"><span class="button feeds white">Feed</span></a>
     </div>
 
@@ -121,7 +123,7 @@
   </div>
 
   <footer id="footer">
-    <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.author.fullname }}. Powered by <a href="http://jekyllrb.com">Jekyll</a>, 
+    <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.author.fullname }} . Powered by <a href="http://jekyllrb.com">Jekyll</a>, 
     based on <a href="https://github.com/redwallhp/solar-theme-jekyll">Solar theme</a></p>
   </footer>
 
