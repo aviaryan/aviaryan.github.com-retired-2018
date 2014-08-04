@@ -69,5 +69,5 @@ code for the following 4 boxes (in screenshot).
 <img src="http://i.imgur.com/WCoo9za.png">
 
 <div class="notify"><span class="symbol icon-info"></span> To have the message box not strech to full width of the page, use span instead of div tag. </div> 
-See the <a href="https://rawgit.com/aviaryan/4125787eaec46348268e/raw/33ee02f4ad4151353ecc35fd6b3bfe551e2c6157/css-box-noimage.html">working example</a> on Raw-Github ! And the <a href="https://gist.github.com/aviaryan/4125787eaec46348268e">gist's source</a>.  
+See the <a href="https://rawgit.com/aviaryan/4125787eaec46348268e/raw/7e2dfdc223f9d3adf08e97355c5756f3ad8c7692/css-box-noimage.html">working example</a> on Raw-Github ! And the <a href="https://gist.github.com/aviaryan/4125787eaec46348268e">gist's source</a>.  
 Don't hesitate to ask if you face problems.
