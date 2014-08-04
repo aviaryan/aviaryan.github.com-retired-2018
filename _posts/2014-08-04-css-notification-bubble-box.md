@@ -8,8 +8,8 @@ hltheme: github
 ---
 
 This post will show you how to create message/notification boxes using CSS without using a image/icon/font icon.  
-So for creating icons, we will use CSS `border-radius` property and some unicode text if needed. The four icons in question are <span class="symbol">i</span> 
-<span class="symbol symbol-red">x</span> <span class="symbol symbol-green">&#x2713;</span> and <span class="symbol symbol-yellow">!</span>.  
+So for creating icons, we will use CSS `border-radius` property and some unicode text if needed. The four icons in question are <span class="symbol icon-info"></span> 
+<span class="symbol icon-error"></span> <span class="symbol icon-tick"></span> and <span class="symbol icon-excl"></span>.  
 Here is the style to create these 4 icons. You will notice that I have used specific fonts where needed.
 
 <pre><code class="language-css">
@@ -20,11 +20,18 @@ Here is the style to create these 4 icons. You will notice that I have used spec
 	padding: .1em .6em .1em .6em;
 	font-weight: bolder;
 	color: white;
-	background-color: #3229CF;
+	background-color: #4E5A56;
 }
-.symbol-red { background: #e64943; font-family: Consolas; }
-.symbol-green { background: #13c823; }
-.symbol-yellow { background: #ffd54b; color: black; }
+
+.icon-info { background-color: #3229CF; }
+.icon-error { background: #e64943; font-family: Consolas; }
+.icon-tick { background: #13c823; }
+.icon-excl { background: #ffd54b; color: black; }
+
+.icon-info:before { content: 'i'; }
+.icon-error:before { content: 'x'; }
+.icon-tick:before { content: '\002713'; }
+.icon-excl:before { content: '!'; }
 </code></pre>
 
 For creating containers i.e. message boxes, we will use the following CSS code -
@@ -52,15 +59,15 @@ Use the `.notify` class with `<div>` tag to create a *streched* container. Then 
 code for the following 4 boxes (in screenshot).
 
 <pre><code class="language-markup">
-&lt;div class=&quot;notify&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;i&lt;/span&gt; A kind of a notice box !&lt;/div&gt;
-&lt;div class=&quot;notify notify-red&quot;&gt;&lt;span class=&quot;symbol symbol-red&quot;&gt;x&lt;/span&gt; Error message&lt;/div&gt;
-&lt;div class=&quot;notify notify-green&quot;&gt;&lt;span class=&quot;symbol symbol-green&quot;&gt;&amp;#x2713;&lt;/span&gt; A positive/success/completion message&lt;/div&gt;
-&lt;div class=&quot;notify notify-yellow&quot;&gt;&lt;span class=&quot;symbol symbol-yellow&quot;&gt;!&lt;/span&gt; A warning message&lt;/div&gt;
+&lt;div class=&quot;notify&quot;&gt;&lt;span class=&quot;symbol icon-info&quot;&gt;&lt;/span&gt; A kind of a notice box !&lt;/div&gt;
+&lt;div class=&quot;notify notify-red&quot;&gt;&lt;span class=&quot;symbol icon-error&quot;&gt;&lt;/span&gt; Error message&lt;/div&gt;
+&lt;div class=&quot;notify notify-green&quot;&gt;&lt;span class=&quot;symbol icon-tick&quot;&gt;&lt;/span&gt; A positive/success/completion message&lt;/div&gt;
+&lt;div class=&quot;notify notify-yellow&quot;&gt;&lt;span class=&quot;symbol icon-excl&quot;&gt;&lt;/span&gt; A warning message&lt;/div&gt;
 </code></pre>
 
 <!-- image -->
 <img src="http://i.imgur.com/WCoo9za.png">
 
-<div class="notify"><span class="symbol">i</span> To have the message box not strech to full width of the page, use span instead of div tag. </div> 
+<div class="notify"><span class="symbol icon-info"></span> To have the message box not strech to full width of the page, use span instead of div tag. </div> 
 See the <a href="https://rawgit.com/aviaryan/4125787eaec46348268e/raw/33ee02f4ad4151353ecc35fd6b3bfe551e2c6157/css-box-noimage.html">working example</a> on Raw-Github ! And the <a href="https://gist.github.com/aviaryan/4125787eaec46348268e">gist's source</a>.  
 Don't hesitate to ask if you face problems.

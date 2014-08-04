@@ -136,12 +136,18 @@ blockquote {
 	padding: .1em .6em .1em .6em;
 	font-weight: bolder;
 	color: white;
-	background-color: #3229CF;
+	background-color: #4E5A56;
 }
-.symbol-red { background: #e64943; font-family: Consolas; }
-.symbol-green { background: #13c823; }
-.symbol-yellow { background: #ffd54b; color: black; }
 
+.icon-info { background-color: #3229CF; }
+.icon-error { background: #e64943; font-family: Consolas; }
+.icon-tick { background: #13c823; }
+.icon-excl { background: #ffd54b; color: black; }
+
+.icon-info:before { content: 'i'; }
+.icon-error:before { content: 'x'; }
+.icon-tick:before { content: '\002713'; }
+.icon-excl:before { content: '!'; }
 /* .notify:before { content: "&#2713"; } */
 
 .postdate { font-style: italic; font-size: 0.9em;}
