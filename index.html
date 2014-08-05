@@ -6,7 +6,7 @@ nod: 1
 
 {% for post in site.posts limit:5%}
     <h1>{{ post.title }}</h1>
-    {{ post.excerpt }}
-    <span style="float: right"><a href="{{ post.url }}">More &rarr;</a></span>
+    {{ post.content | strip_html | truncatewords: 70 }}
+    <br><span style="float: right"><a href="{{ post.url }}">More &rarr;</a></span>
 <br><br><br>
 {% endfor %}
