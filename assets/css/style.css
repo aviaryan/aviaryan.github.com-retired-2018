@@ -333,6 +333,18 @@ img.center {
 }
 
 
+/* Post index */
+.index-date { font-size: .7em;
+	color: #8B8D7A;
+	float: right; }
+.index-item { width: 650px; 
+	margin: 0 auto; 
+	font-size: 1.2em; }
+.post-index-cat {
+	text-align: center;
+	width: 100%;
+	background-color: #EAEAEA;
+}
 
 /*** Pagination ***/
 .postnavigation {

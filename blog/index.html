@@ -21,11 +21,6 @@ nod: 1
 </tr></table>
 <br>
 
-<div class="posts">
-<ul>
-  {% for post in site.posts %}
-    <li><font size=+1><a href="{{ post.url }}">{{ post.title }}</a>{% if post.category != null %} &middot; {{ post.category }} {% endif %}
-    	<font size=-1>[ {{ post.date | date_to_string }} ]</font></font></li>
-    {% endfor %}
-</ul>
-</div>
+{% for post in site.posts reverse %}
+	{% include archive_post.html %}
+{% endfor %}

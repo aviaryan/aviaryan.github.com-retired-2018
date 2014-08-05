@@ -1,0 +1,11 @@
+{% capture date %}{{ post.date }}{% endcapture %}
+{% capture this_year %}{{ date | date: "%Y" }}{% endcapture %}
+{% unless year == this_year %}
+	{% assign year = this_year %}
+	{% unless forloop.first %}
+		
+	{% endunless %}
+   <br><h1 class="post-index-cat">{{ date | date: "%Y" }}</h1><br>
+{% endunless %}
+	
+{% include post_in_list.html %}

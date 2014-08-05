@@ -4,4 +4,9 @@ title: Home
 nod: 1
 ---
 
-Welcome to my homepage !!<br>
+{% for post in site.posts limit:5%}
+    <h1>{{ post.title }}</h1>
+    {{ post.excerpt }}
+    <span style="float: right"><a href="{{ post.url }}">More &rarr;</a></span>
+<br><br><br>
+{% endfor %}
