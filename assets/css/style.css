@@ -27,6 +27,7 @@ blockquote:before, blockquote:after, q:before, q:after {
 th { text-align: center; border: 1px solid; }
 td {text-align: left; border: 1px dotted; padding: 1px; padding-left: 2px;}
 table.inline th, table.inline td { border: 0px; }
+.index-item table.inline td { padding-left: auto;}
 table.inline td { padding-left: 10px; }
 
 /*** Basics ***/
@@ -64,8 +65,10 @@ sub { vertical-align: sub; font-size: 0.85em; }
 :not(pre) > code {
     font: 0.95em Monaco, Courier, Monospace;
 }
+
+pre > code { font-size: 0.95em; } 
 pre > code[class*="language-"] {
-	font-size: 1.0em;
+	/* font-size: 1.0em; */
 	line-height: 1.3em;
     white-space: pre;
     margin-top: -1.3em;
@@ -199,12 +202,11 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 .img-middle { vertical-align: middle; }
 .nopadding { padding: 0; }
 .nounderline { text-decoration: underline; }
-
-
+.clears:after { clear: both; }
 
 /*** Structure ***/
 #page {
-	width: 1200px;
+	width: 1210px;
 	margin: 0 auto;
 	position: relative;
 }
@@ -217,10 +219,10 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 }
 
 #header {
-	margin-top: -20px;
+	margin-top: 0px;
 }
 
-#header_title { width: 750px; }
+.header_title { width: 750px; }
 
 
 #header h1 {
@@ -245,12 +247,13 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 }
 
 #sidebar {
-	position: absolute;
+	/* position: absolute; */
 	text-align: left;
 	width: 180px;
-	left: 0px;
-	top: 20px;
+	margin-left: 5px;
+	margin-top: 20px; /* gives position, not margin */
 	float: left;
+	/*background-color: white;*/
 }
 
 #sidebar li {
@@ -272,7 +275,7 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 #lbox {
 	border: 1px solid;
 	border-radius: .5em;
-	border-style: inset;
+	border-style: outset;
 	margin-left: 0px;
 	padding-left: 10px;
 }
@@ -334,12 +337,19 @@ img.center {
 
 
 /* Post index */
+
 .index-date { font-size: .7em;
 	color: #8B8D7A;
-	float: right; }
+	text-align: right;
+	width: 150px; 
+	}
+
+.index-post { text-align: left; width: 500px; }
+
 .index-item { width: 650px; 
 	margin: 0 auto; 
 	font-size: 1.2em; }
+
 .post-index-cat {
 	text-align: center;
 	width: 100%;

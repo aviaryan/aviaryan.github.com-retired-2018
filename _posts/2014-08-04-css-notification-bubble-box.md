@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Simple CSS notification bubble without using any icon
+title: Simple CSS notification boxes without using any icon
 tags: css
 highlight: 1
 brushes: ['css.min', 'markup.min']
-hltheme: github
 ---
 
 This post will show you how to create message/notification boxes using CSS without using a image/icon/font icon.  

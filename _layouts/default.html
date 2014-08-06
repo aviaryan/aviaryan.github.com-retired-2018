@@ -22,7 +22,7 @@
 
   <!-- HIGHLIGHTER SCRIPTS -->
   {% if page.highlight != null %}
-  <link rel="stylesheet" href="/assets/prism/prism{% if page.hltheme == null %}{% else %}-{{page.hltheme}}{% endif %}.css"/>
+  <link rel="stylesheet" href="/assets/prism/prism{% if page.hltheme == null %}-okaidia{% else %}-{{page.hltheme}}{% endif %}.css"/>
   <!-- <link rel="stylesheet" href="/assets/prism/prism-line-numbers.css"> -->
   {% endif %}
   
@@ -88,16 +88,16 @@
       <a href="http://feeds.feedburner.com/aviaryan"><span class="button feeds white">Feed</span></a>
     </div>
 
-    {% if page.rtype == "page" %}
+    <!-- {% if page.rtype == "page" %}
       {% capture conwidth %}80%;{% endcapture %}
-    {% endif %}
+    {% endif %} -->
 
     <div id="content" style="width: {{ conwidth }}">
       <header id="header">
-        <div id="header_title">
+        <span class="header_title">
         <h1>{{ page.title }}</h1>
         <span class="tagline"><small>{{ page.tagline }}</small></span>
-        <hr></div>
+        <hr></span>
       </header>
       <br>
     {% if page.rtype == null %}
@@ -116,14 +116,18 @@
     {% if page.nod == null %}
       {% include disqus_notauto.html %}
     {% endif %}
+  {% else %}
+    <br><br> <!-- provide blankspace, looks better -->
   {% endif %}
     </div>
+
+    <div class="clear"></div>
 
   </div>
 
   <footer id="footer">
     <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.author.fullname }} . Powered by <a href="http://jekyllrb.com">Jekyll</a>, 
-    based on <a href="https://github.com/redwallhp/solar-theme-jekyll">Solar theme</a></p>
+    forked from <a href="https://github.com/redwallhp/solar-theme-jekyll">Solar theme</a></p>
   </footer>
 
 <!-- JS AT THE END FOR FASTER LOAD -->

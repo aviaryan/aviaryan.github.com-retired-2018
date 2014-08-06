@@ -1,6 +1,6 @@
 /**
- * Github theme by Avi Aryan (http://aviaryan.github.io)
- * - It may not look exactly for each and every language due to difference in keywords.
+ * GHColors by Avi Aryan (http://aviaryan.github.io)
+ * Colors inspired from Github
  */
 
 code[class*="language-"],
@@ -12,7 +12,6 @@ pre[class*="language-"] {
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
-	font-size: 0.95em;
 	line-height: 1.2em;
 
 	-moz-tab-size: 4;
@@ -42,6 +41,7 @@ pre[class*="language-"] {
 	overflow: auto;
 	border: 1px solid #dddddd;
 	background-color: white;
+	border-radius: .5em;
 }
 
 :not(pre) > code[class*="language-"],

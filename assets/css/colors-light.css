@@ -1,8 +1,9 @@
 /* Global styles */
-html, body {
-	background-color: #fdf6e3;
-	color: #5F6D70;
+#page {
+	background-color:  #fdf6e3; /* #fdf6e3;*/
+	color: #485355;
 }
+body { background-color:  #FBECC4; }
 
 :not(pre) > code { background-color: #F3F8C0; }
 
@@ -45,7 +46,7 @@ blockquote {
 
 #sidebar a:hover {
 	color: #248C85;
-	background-color: #fdf6e3;
+	background-color: #fdf6e3; /*#fdf6e3;*/
 }
 
 #lbox {
