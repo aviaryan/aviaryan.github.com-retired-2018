@@ -6,7 +6,7 @@
 }
 body { background-color:  #FBECC4; }
 
-:not(pre) > code { background-color: #F3F8C0; }
+/* :not(pre) > code { background-color: #F3F8C0; } */
 
 a[href], a:visited, a:active {
 	color: #2aa198;
