@@ -8,6 +8,8 @@ body { background-color:  #FBECC4; }
 
 /* :not(pre) > code { background-color: #F3F8C0; } */
 
+#data a[href] .a_nohover:hover { background-color: #31322C; border: 0px; }
+
 a[href], a:visited, a:active {
 	color: #2aa198;
 	border-color: #eee8d5;
@@ -18,6 +20,7 @@ a[href], a:visited, a:active {
 	border-color: #BDEDAF;
 	color: #2aa198;
 }
+
 
 h1, h2, h3, h4, .heading {
 	color: #cb4b16;
