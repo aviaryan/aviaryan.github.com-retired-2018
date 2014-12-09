@@ -1,6 +1,6 @@
 name: Avi Aryan
 markdown: redcarpet
-fullpath: http://aviaryan.github.io
+fullpath: http://aviaryan.in
 description: Personal Website
 baseurl: 
 permalink: /blog/:categories/:title.html
