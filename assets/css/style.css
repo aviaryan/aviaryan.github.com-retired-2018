@@ -63,7 +63,7 @@ sup { vertical-align: super; font-size: 0.85em; }
 sub { vertical-align: sub; font-size: 0.85em; }
 
 :not(pre) > code {
-    font: 0.95em Monaco, Courier, Monospace;
+    font: 1em Monaco, Courier, Monospace;
 }
 
 pre > code { font-size: 0.95em; } 

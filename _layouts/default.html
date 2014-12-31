@@ -71,7 +71,7 @@
         {% endfor %}
         </ul>
       {% else %}
-        {% if page.category != null %}See more in <font class="heading">category <a href="/blog/categories.html#{{ page.category }}">{{ page.category }}</a></font><br><hr>{% endif %}
+        {% if page.category != null %}See more in <font class="heading"><a href="/blog/categories.html#{{ page.category }}">{{ page.category }}</a></font><br><br>{% endif %}
         <h3>Tags available</h3>
         <span id="leftinfo"><a href="/blog/tags.html#untagged">Untagged</a>
         {% for tag in site.tags %}<a href="/blog/tags.html#{{ tag | first }}">{{ tag | first }}</a>
