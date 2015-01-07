@@ -126,6 +126,15 @@ em, .concrete {
     white-space: nowrap; /* to disable word wrap */
 }
 
+.inbutton {
+	font-family:Tahoma,Geneva,Arial,sans-serif;
+	padding:2px 4px 2px 4px;
+    border:1px solid;
+    border-style: inset;
+    font-weight: bold;
+	border-radius:.5em;
+}
+
 .button-tag {
 	border: 1px solid;
 	border-radius: .5em;
@@ -229,13 +238,6 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 	position: relative;
 }
 
-#topright {
-	margin-right: 5px;
-	margin-top: 20px;
-	text-align: right;
-	width: auto;
-}
-
 #header {
 	font-family: Courier;
 	font-weight: bold;
@@ -261,6 +263,10 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 	bottom: 10px;
 	font-size: 0.85em;
 	border-top: 1px solid #073642;
+}
+
+#rightbar {
+	float: right;
 }
 
 #content {

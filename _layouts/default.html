@@ -42,7 +42,6 @@
           <li><a href="/blog">Archive</a></li>
           <li><a href="/ahk">Ahk scripts</a></li>
           <li><a href="/softwares.html">Softwares</a></li>
-          <li><a href="/contact.html">Contact</a></li>
       </nav>
 
 
@@ -85,6 +84,16 @@
     {% endif %}
 
    <div id="content">
+      
+    <div id="rightbar">
+      <a href="/blog"><span class="inbutton">Archive</span></a>
+       <a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">
+      <span class="inbutton">GitHub</span></a>
+      <a href="/contact.html"><span class="inbutton">Contact</span></a>
+      <a href="http://feeds.feedburner.com/aviaryan"><span class="inbutton">Feed</span></a>
+    </div>
+    <br><br>
+
       <header id="header">
         <span class="header_title">
         <h1>{{ page.title }}</h1>
