@@ -130,9 +130,9 @@ em, .concrete {
 	font-family:Tahoma,Geneva,Arial,sans-serif;
 	padding:2px 4px 2px 4px;
     border:1px solid;
-    border-style: inset;
+    border-style: ;
     font-weight: bold;
-	border-radius:.5em;
+	border-radius:.1em;
 }
 
 .button-tag {
@@ -267,6 +267,7 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 
 #rightbar {
 	float: right;
+	right: 10px;
 }
 
 #content {
