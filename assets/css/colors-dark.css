@@ -1,11 +1,12 @@
 html, body {
-	background-color: #002a35;
-	color: #839496;
+	background-color: #272822;
+	color: #f8f8f2;
 }
 
 a, a:visited, a:active {
-	color: #2aa198;
-	border-color: #073642;
+	color: #a6e22e;
+	text-decoration: none !important;
+	border: none;
 }
 
 a:hover {
@@ -39,6 +40,10 @@ blockquote {
 #sidebar a:hover {
 	color: #2aa198;
 	background-color: #073642;
+}
+
+#latestposts li {
+	text-decoration: none;
 }
 
 #footer {

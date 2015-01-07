@@ -30,21 +30,6 @@
   <link href="/assets/css/style.css" rel="stylesheet" />
   <link href="/assets/css/colors-light.css" rel="stylesheet" />
 
-{% if page.rtype == "page" %}
-<style>
-#page {
-  width: 95%;
-  margin: auto;
-}
-#content {
-  /* margin: 0px 20px 10px 210px; /* width of sidebar is 180 */
-  margin-right: 30px;
-  margin-left: auto;
-  max-width: 1150px;
-  min-width: 780px;
-}
-</style>
-{% endif %}
 </head>
 
 <body>
@@ -53,54 +38,67 @@
 
     <div id="sidebar">
       <nav id="navigation">
-        <ul>
-          <li><img src="/images/profile_128.png" height="100" width="100">
-          <li><a href="/">Home</a></li>
+          <li><a href="/"><img src="/images/profile_128.png" height="100" width="100"></a></li>
           <li><a href="/blog">Archive</a></li>
           <li><a href="/ahk">Ahk scripts</a></li>
           <li><a href="/softwares.html">Softwares</a></li>
           <li><a href="/contact.html">Contact</a></li>
-        </ul>
       </nav>
-      <div id="lbox">
+
+
       {% if page.rtype != "post" %}
-        <h2>Latest Posts</h2>
-        <ul id="latestposts">
+        <li class="divider"></li>
+        <li><strong>Latest Posts</strong></li>
+        <li class="latestposts-box">
         {% for post in site.posts limit:5%}
-         <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+         <a href="{{ post.url }}"> <span class="latestposts">{{ post.title }}</span> </a><br>
         {% endfor %}
-        </ul>
+        </li>
       {% else %}
-        {% if page.category != null %}See more in <font class="heading"><a href="/blog/categories.html#{{ page.category }}">{{ page.category }}</a></font><br><br>{% endif %}
-        <h3>Tags available</h3>
-        <span id="leftinfo"><a href="/blog/tags.html#untagged">Untagged</a>
-        {% for tag in site.tags %}<a href="/blog/tags.html#{{ tag | first }}">{{ tag | first }}</a>
+        {% if page.category != null %}
+        <li class="divider"></li>
+        <li><strong>Category</strong></li>
+        <li><font class="heading"><a href="/blog/categories.html#{{ page.category }}">{{ page.category }}</a></font></li>
+        {% endif %}
+        <li class="divider"></li>
+        <li><strong>Tags</strong></li>
+        <li>
+        <a href="/blog/tags.html#untagged"><span class="button button-tag">Untagged</span></a>
+        {% for tag in site.tags %}<a href="/blog/tags.html#{{ tag | first }}">
+        <span class="button button-tag">{{ tag | first }}</span></a>
         {% endfor %}
-        </span>
+        </li>
       {% endif %}
-    </div>
+    
     <br><br> <!-- extra space in case of small page -->
     </div>
-    
-    <!-- top right -->
+
+    <!-- top right
     <div id="topright">
       <a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">
       <span class="button github white">{% if page.ghlink != null %}<span class="symbol" style="background: #3470ae;">1</span> {% endif %}GitHub</span></a>
       <a href="http://feeds.feedburner.com/aviaryan"><span class="button feeds white">Feed</span></a>
-    </div>
+    </div> -->
 
-    <!-- {% if page.rtype == "page" %}
+    {% if page.rtype == "page" %}
       {% capture conwidth %}80%;{% endcapture %}
-    {% endif %} -->
+    {% endif %}
 
-    <div id="content" style="width: {{ conwidth }}">
+   <div id="content">
       <header id="header">
         <span class="header_title">
         <h1>{{ page.title }}</h1>
-        <span class="tagline"><small>{{ page.tagline }}</small></span>
-        <hr></span>
+        <span class="tagline"><small>
+        {% if page.rtype == "post" %}
+        {{ page.date | date: "%b %d, %Y" }}
+        {% else %}
+        {{ page.tagline }}{% endif %}</small></span>
+        </span>
       </header>
-      <br>
+    <div id="xc" style=" width: {{ conwidth }};">
+    
+    <br><br>
+
     {% if page.rtype == null %}
     <div id="data">
       {{ content }}
@@ -120,17 +118,21 @@
   {% else %}
     <br><br> <!-- provide blankspace, looks better -->
   {% endif %}
-    </div>
 
-    <div class="clear"></div>
-
-  </div>
+  <div class="clear"></div>
 
   <footer id="footer">
     <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.author.fullname }} ( <a href="/donate.html">Donate</a> )
     <br>
     <span style="color: #8F8F8F;">Powered by <a href="http://jekyllrb.com">Jekyll</a>, forked from <a href="https://github.com/redwallhp/solar-theme-jekyll">Solar theme</a></span></p>
   </footer>
+
+    </div>
+    </div>
+
+
+  </div>
+
 
 <!-- JS AT THE END FOR FASTER LOAD -->
 {% if page.highlight != null %}

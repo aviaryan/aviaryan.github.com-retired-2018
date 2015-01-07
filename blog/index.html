@@ -6,7 +6,7 @@ nod: 1
 
 <table class="inline">
 <tr>
-<th width="100px"><b><a href="categories.html">Categories</a></b></th>
+<td width="100px" class="concrete"><b><a href="categories.html"><em>Categories</em></a></b></td>
 {% for category in site.categories %}
 <td width="auto"><a href="/blog/categories.html#{{ category | first }}">{{ category | first }}</a></td>
 {% endfor %}
@@ -14,7 +14,7 @@ nod: 1
 
 <table class="inline">
 <tr>
-<th width="100px"><b><a href="tags.html">Tags</a></b></th>
+<td width="100px" class="concrete"><b><a href="tags.html"><em>Tags</em></a></b></td>
 {% for tag in site.tags %}
 <td width="auto"><a href="/blog/tags.html#{{ tag | first }}">{{ tag | first }}</a></td>
 {% endfor %}

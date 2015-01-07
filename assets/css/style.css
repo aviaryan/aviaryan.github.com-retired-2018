@@ -56,7 +56,7 @@ a[name] {
 p { margin-bottom: 15px; }
 ul, ol { padding: 0 0 18px 30px; }
 ol li, ul li { margin-top: 3px; margin-bottom: 3px; }
-em, i { font-style: italic; }
+i { font-style: italic; }
 strong, b { font-weight: bold; }
 small { font-size: 0.85em; }
 sup { vertical-align: super; font-size: 0.85em; }
@@ -92,15 +92,21 @@ blockquote {
     line-height: 1.2em;
 }
 
+em, .concrete {
+	padding: 2px 5px 2px 5px;
+	border-radius: 0px;
+}
+
 .notify {
 	background-color:#e3f7fc; color:#555; 
     border:.1em solid;
 	border-color: #8ed9f6;
     border-radius:10px;
     font-family:Tahoma,Geneva,Arial,sans-serif;
-    font-size:1.1em;
+    font-size:1.2em;
     padding:10px 10px 10px 10px;
-    margin:10px;
+    margin-bottom: 20px;
+    margin-left: 0px;
     cursor: default;
 }
 #data .notify a { border: 0px; }
@@ -117,7 +123,16 @@ blockquote {
 	border-radius:.5em;
     background: #FCC485;
     color: black;
+    white-space: nowrap; /* to disable word wrap */
 }
+
+.button-tag {
+	border: 1px solid;
+	border-radius: .5em;
+	padding: 2px 5px 2px 3px;
+}
+
+.button-tag:before { content: '+ ';}
 
 .button:hover {
 	background: #31322C;
@@ -206,8 +221,10 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 .clears:after { clear: both; }
 
 /*** Structure ***/
+
 #page {
-	width: 1210px;
+	width: 100%;
+	height: 100%;
 	margin: 0 auto;
 	position: relative;
 }
@@ -220,11 +237,13 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 }
 
 #header {
-	margin-top: 0px;
+	font-family: Courier;
+	font-weight: bold;
+	margin-left: 30px;
+	margin-right: auto;
 }
 
-.header_title { width: 750px; }
-
+.header_title { /* width: 750px; */ }
 
 #header h1 {
 	font-size: 32px;
@@ -236,32 +255,49 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 
 #footer {
 	width: 500px;
-	margin: 50px auto 20px auto;
+	margin: auto;
+	margin-top: 30px;
 	padding-top: 10px;
+	bottom: 10px;
 	font-size: 0.85em;
 	border-top: 1px solid #073642;
 }
 
 #content {
+	margin-left: 200px;
+	padding: 30px;
+	border-radius: 2em;
+	bottom: 0;
+}
+
+#xc {
+	margin-left: auto;
+	margin-right: auto; /* centers the div #xc in #content */
 	width: 750px;
-	margin: 0 auto;
+	bottom: 0;
+	/* width: 80%; also works */
 }
 
 #sidebar {
-	/* position: absolute; */
+	top: 0;
+	bottom: 0;
+	left: 0;
+ 	position: fixed;
 	text-align: left;
-	width: 180px;
-	margin-left: 5px;
-	margin-top: 20px; /* gives position, not margin */
+	width: 200px;
+	background: black;
 	float: left;
-	/*background-color: white;*/
 }
 
 #sidebar li {
 	list-style: none;
-	margin: 2px 0;
+	padding: 5px;
+	padding-left: 10px;
+	margin: 0px;
+	border-top: 1px;
+	border-color: white;
+	border-style: inset;
 }
-
 
 #navigation a {
 	border: none;
@@ -270,29 +306,16 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 	padding: 2px 4px;
 }
 #navigation a:hover {
-	font-size: 1.3em;
+	font-size: 1.2em;
 }
 
-#lbox {
-	border: 1px solid;
-	border-radius: .5em;
-	border-style: outset;
-	margin-left: 0px;
-	padding-left: 10px;
-}
-
-#latestposts li {
-	margin-left: -30px;
-	list-style: square;
-	list-style-position: inside;
+.latestposts {
 	text-decoration: underline;
-	border-style: inset;
-	font-size: 12px;
+	margin: 0px 0px 0px 0px;
+	font-size: .9em;
 }
-#leftinfo {
-	margin-left: 0px;
-	font-size: 12px;
-}
+.latestposts:before { content: '> ';}
+
 
 /*** Posts ***/
 article {
@@ -372,19 +395,26 @@ img.center {
 	float: right;
 }
 
+
 /** Very Custom settings **/
 
 
 /*** Media Queries ***/
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1000px) {
 
 	#page, #header, #content, #data, #footer {
 		width: inherit;
 		padding-left: 10px;
 		padding-right: 10px;
 	}
+	
+	#content {
+		margin-left: 0px;
+	}
+	#header { margin-left: 10px; }
 
 	#sidebar {
+		display: none;
 		position: relative;
 		text-align: left;
 		width: 100%;
