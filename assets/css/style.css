@@ -271,7 +271,7 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 }
 
 #content {
-	margin-left: 200px;
+	margin-left: 220px;
 	padding: 30px;
 	border-radius: 2em;
 	bottom: 0;
@@ -291,7 +291,7 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 	left: 0;
  	position: fixed;
 	text-align: left;
-	width: 200px;
+	width: 220px;
 	background: black;
 	float: left;
 }

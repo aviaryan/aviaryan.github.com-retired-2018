@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SmartGit, Portable Git Client
-tags: software
+tags: software review
 ---
 
 I was looking for a portable Git GUI Client and I finally have found what I wanted, it is [SmartGit](http://www.syntevo.com/smartgithg/).

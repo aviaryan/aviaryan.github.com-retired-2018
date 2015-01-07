@@ -1,3 +1,11 @@
+/*
+ * MAKING YOUR OWN COLOR SCHEME
+ * 
+ * Use Find and replace to change colors at many places in one time. Actually whenenver you are to change a color, consider using F/R to look for them same color.
+ * At places, the same color with varying luminousity is used so keep that in mind and make your design a/c that for best results.
+ * 
+*/
+
 /* Global styles */
 #page {
 	color: #485355;
@@ -78,7 +86,7 @@ blockquote {
 .button-tag:hover {
 	background: #063C71;
 	color: #d3d3d3;
-	border: 0px;
+	border-color: #063C71;
 }
 
 .divider {
@@ -87,6 +95,10 @@ blockquote {
 
 .inbutton {
 	color: #F5C138;
+}
+.inbutton:hover {
+	background-color: #F5C138;
+	color: #fdf6e3;
 }
 
 em, .concrete { background: #F9E0A2; }
