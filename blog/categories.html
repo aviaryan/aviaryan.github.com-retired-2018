@@ -10,8 +10,8 @@ nod: 1
 {% endif %}{% endfor %}
 
 {% for category in site.categories %}
-<br>
 {% capture catname %}{{ category | first }}{% endcapture %}
+<br>
 <a name="{{ catname }}"></a><h1 class="post-index-cat">{{ catname }}</h1>
 {% for post in site.categories[catname] %}
  {% include post_in_list.html %}

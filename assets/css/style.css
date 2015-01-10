@@ -267,14 +267,16 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 
 #rightbar {
 	float: right;
-	right: 10px;
+	right: 0px;
 }
 
 #content {
 	margin-left: 220px;
-	padding: 30px;
+	padding: 15px;
+	padding-top: 30px;
 	border-radius: 2em;
 	bottom: 0;
+	max-width: 1200px;
 }
 
 #xc {
@@ -282,7 +284,6 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 	margin-right: auto; /* centers the div #xc in #content */
 	width: 750px;
 	bottom: 0;
-	/* width: 80%; also works */
 }
 
 #sidebar {
@@ -409,16 +410,15 @@ img.center {
 /*** Media Queries ***/
 @media all and (max-width: 1000px) {
 
-	#page, #header, #content, #data, #footer {
+	#page, #header, #content, #data, #xc, #footer {
 		width: inherit;
 		padding-left: 10px;
 		padding-right: 10px;
 	}
 	
-	#content {
-		margin-left: 0px;
-	}
+	#content { margin-left: 0px; }
 	#header { margin-left: 10px; }
+	#rightbar { float: none; margin-left: 25px; }
 
 	#sidebar {
 		display: none;
@@ -433,4 +433,10 @@ img.center {
 		display: block;
 		margin-bottom: 15px;
 	}
+}
+
+@media only screen and (max-width: 480px) { /* mobiles */
+	#content { margin-left: 0px; padding: 0px; }
+	#header { margin-left: 0px; }
+	#rightbar { float: none; margin-left: 5px; margin-top: 20px; }
 }
