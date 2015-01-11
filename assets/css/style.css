@@ -278,12 +278,13 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 	max-width: 1200px;
 }
 
-#xc {
+#xc, #xcpg {
 	margin-left: auto;
 	margin-right: auto; /* centers the div #xc in #content */
 	width: 750px;
 	bottom: 0;
 }
+#xcpg { width: 80%; }
 
 #sidebar {
 	top: 0;
@@ -416,6 +417,9 @@ img.center {
 	}
 	
 	#content { margin-left: 0px; }
+	#xc { max-width: 650px; }
+	#xcpg { width: 95%; }
+	
 	#header { margin-left: 10px; }
 	#rightbar { float: none; right: auto; margin-left: 0px; text-align: center; font-size: 16px;
 		margin-top: 0px; padding-top: 20px; }
@@ -438,6 +442,6 @@ img.center {
 @media only screen and (max-width: 480px) { /* mobiles */
 	#content { margin-left: 0px; padding: 0px; }
 	#header { margin-left: 0px; }
-	#header h1 { font-size: 28px; }
+	#header h1 { font-size: 24px; }
 	#page { padding-left: 3px; padding-right: 3px;}
 }

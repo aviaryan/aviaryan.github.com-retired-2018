@@ -73,7 +73,9 @@
     </div>
 
     {% if page.rtype == "page" %}
-      {% capture conwidth %}80%;{% endcapture %}
+      {% capture xcid %}xcpg{% endcapture %}
+    {% else %}
+      {% capture xcid %}xc{% endcapture %}
     {% endif %}
 
    <div id="content">
@@ -99,7 +101,7 @@
         {{ page.tagline }}{% endif %}</small></span>
         </span>
       </header>
-    <div id="xc" style=" width: {{ conwidth }};">
+    <div id="{{ xcid }}">
     
     <br><br><br>
 
