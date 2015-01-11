@@ -6,20 +6,22 @@ nod: 1
 
 <table class="inline">
 <tr>
-<td width="100px" class="concrete"><b><a href="categories.html"><em>Categories</em></a></b></td>
+<td><a href="categories.html"><h3>Categories</h3></a></td>
+<td>
 {% for category in site.categories %}
-<td width="auto"><a href="/blog/categories.html#{{ category | first }}">{{ category | first }}</a></td>
+<a href="/blog/categories.html#{{ category | first }}"><span class="button button-cat">{{ category | first }}</span></a>
 {% endfor %}
-</tr></table>
+</td></tr>
 
-<table class="inline">
 <tr>
-<td width="100px" class="concrete"><b><a href="tags.html"><em>Tags</em></a></b></td>
+<td><a href="tags.html"><h3>Tags</h3></a></td>
+<td>
 {% for tag in site.tags %}
-<td width="auto"><a href="/blog/tags.html#{{ tag | first }}">{{ tag | first }}</a></td>
+<a href="/blog/tags.html#{{ tag | first }}"><span class="button button-tag">{{ tag | first }}</span></a>
 {% endfor %}
-</tr></table>
-<br>
+</td></tr></table>
+
+<br><br>
 
 {% for post in site.posts reverse %}
 	{% include archive_post.html %}

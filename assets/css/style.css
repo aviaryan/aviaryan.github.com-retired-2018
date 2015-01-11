@@ -24,6 +24,9 @@ blockquote:before, blockquote:after, q:before, q:after {
 	content: '';
 	content: none;
 }
+
+img { max-width: 100%; } /* useful for smaller screens , image zoomed out */
+
 th { text-align: center; border: 1px solid; }
 td {text-align: left; border: 1px dotted; padding: 1px; padding-left: 2px;}
 table.inline th, table.inline td { border: 0px; }
@@ -43,11 +46,6 @@ a, a:active, a:visited {
 }
 
 #data a[href] { border-bottom: 1px solid #BCEDC5; }
-
-#data a[href]:hover {
-	background-color: #839496;
-	color: #000000;
-}
 
 a[name] {
 	border: 0px;
@@ -135,13 +133,14 @@ em, .concrete {
 	border-radius:.1em;
 }
 
-.button-tag {
+.button-tag, .button-cat {
 	border: 1px solid;
 	border-radius: .5em;
 	padding: 2px 5px 2px 3px;
 }
 
 .button-tag:before { content: '+ ';}
+.button-cat:before { content: '@ ';}
 
 .button:hover {
 	background: #31322C;
@@ -410,7 +409,7 @@ img.center {
 /*** Media Queries ***/
 @media all and (max-width: 1000px) {
 
-	#page, #header, #content, #data, #xc, #footer {
+	#page, #header, #content, #data, #xc, #footer, .index-item, .post-index-cat {
 		width: inherit;
 		padding-left: 10px;
 		padding-right: 10px;
@@ -418,7 +417,8 @@ img.center {
 	
 	#content { margin-left: 0px; }
 	#header { margin-left: 10px; }
-	#rightbar { float: none; margin-left: 25px; }
+	#rightbar { float: none; right: auto; margin-left: 0px; text-align: center; font-size: 16px;
+		margin-top: 0px; padding-top: 20px; }
 
 	#sidebar {
 		display: none;
@@ -438,5 +438,6 @@ img.center {
 @media only screen and (max-width: 480px) { /* mobiles */
 	#content { margin-left: 0px; padding: 0px; }
 	#header { margin-left: 0px; }
-	#rightbar { float: none; margin-left: 5px; margin-top: 20px; }
+	#header h1 { font-size: 28px; }
+	#page { padding-left: 3px; padding-right: 3px;}
 }

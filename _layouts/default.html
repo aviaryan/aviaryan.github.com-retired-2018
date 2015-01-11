@@ -41,7 +41,7 @@
           <li><a href="/"><img src="/images/profile_128.png" height="100" width="100"></a></li>
           <li><a href="/blog">Archive</a></li>
           <li><a href="/ahk">Ahk scripts</a></li>
-          <li><a href="/softwares.html">Softwares</a></li>
+          <li><a href="/contact.html">Contact</a></li>
       </nav>
 
 
@@ -57,7 +57,7 @@
         {% if page.category != null %}
         <li class="divider"></li>
         <li><strong>Category</strong></li>
-        <li><font class="heading"><a href="/blog/categories.html#{{ page.category }}">{{ page.category }}</a></font></li>
+        <li><font class="heading"><a href="/blog/categories.html#{{ page.category }}"><span class="button button-cat">{{ page.category }}</span></a></font></li>
         {% endif %}
         <li class="divider"></li>
         <li><strong>Tags</strong></li>
@@ -79,11 +79,12 @@
    <div id="content">
       
  <div id="rightbar">
+   <a href="/"><span class="inbutton">Home</span></a>
    <a href="/blog"><span class="inbutton">Archive</span></a>
+   <a href="/softwares.html"><span class="inbutton">Softwares</span></a>
     <a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">
    <span class="inbutton">GitHub</span></a>
-   <a href="/contact.html"><span class="inbutton">Contact</span></a>
-   <a href="http://feeds.feedburner.com/aviaryan"><span class="inbutton">Feed</span></a>
+   <!-- <a href="http://feeds.feedburner.com/aviaryan"><span class="inbutton">Feed</span></a> -->
  <br><br> <!-- br here helps to capture div space so avoids heading to get that space -->
  </div>
       

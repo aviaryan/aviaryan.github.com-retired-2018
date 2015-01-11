@@ -85,8 +85,18 @@ blockquote {
 
 .button-tag:hover {
 	background: #063C71;
-	color: #d3d3d3;
 	border-color: #063C71;
+}
+
+.button-cat {
+	background: #B59B35;
+	border-color: #AE9B17;
+	color: #d3d3d3;
+}
+
+.button-cat:hover {
+	background: #917C2B;
+	border-color: #917C2B;
 }
 
 .divider {
