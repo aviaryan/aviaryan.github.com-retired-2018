@@ -27,8 +27,13 @@ blockquote:before, blockquote:after, q:before, q:after {
 
 img { max-width: 100%; } /* useful for smaller screens , image zoomed out */
 
+table { border-collapse: collapse; }
 th { text-align: center; border: 1px solid; }
-td {text-align: left; border: 1px dotted; padding: 1px; padding-left: 2px;}
+td { text-align: left; 
+	border: 1px solid; 
+	padding: 4px 4px 4px 4px;
+}
+
 table.inline th, table.inline td { border: 0px; }
 .index-item table.inline td { padding-left: auto;}
 table.inline td { padding-left: 10px; }
@@ -44,8 +49,6 @@ a, a:active, a:visited {
 	text-decoration: none;
 	padding-bottom: 2px;
 }
-
-#data a[href] { border-bottom: 1px solid #BCEDC5; }
 
 a[name] {
 	border: 0px;
@@ -64,9 +67,16 @@ sub { vertical-align: sub; font-size: 0.85em; }
     font: 1em Monaco, Courier, Monospace;
 }
 
-pre > code { font-size: 0.95em; } 
+pre > code { 
+	font-family: Monaco, Courier, Monospace;
+	font-size: 14px; /* fix it - dont want large on 16px blog posts */
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	padding: 0px 8px 0px 8px;
+} 
+
 pre > code[class*="language-"] {
-	/* font-size: 1.0em; */
+	font-size: 13px;
 	line-height: 1.3em;
     white-space: pre;
     margin-top: -1.3em;
@@ -74,12 +84,13 @@ pre > code[class*="language-"] {
 }
 div[class="highlight"] > pre > code { margin-top: 0em; }
 
+/* scroll bars */
 pre {
- white-space: pre-wrap;       /* css-3 */
- white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
- white-space: -pre-wrap;      /* Opera 4-6 */
- white-space: -o-pre-wrap;    /* Opera 7 */
- word-wrap: break-word;       /* Internet Explorer 5.5+ */
+ white-space: pre-wrap;       /* css-3*/
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999*/
+ white-space: -pre-wrap;      /* Opera 4-6*/
+ white-space: -o-pre-wrap;    /* Opera 7*/
+ word-wrap: break-word;       /* Internet Explorer 5.5+*/
 }
 
 blockquote {
@@ -187,22 +198,22 @@ acronym, abbr {
 
 
 h1 {
-	font-size: 20px;
+	font-size: 24px;
 	margin: 5px 0 7px 0;
 }
 #data h1 {
 	font-weight: bold;
 }
 h2 {
-	font-size: 18px;
+	font-size: 22px;
 }
 h3 {
-	font-size: 16px;
+	font-size: 20px;
 }
 h4 {
-	font-size: 14px;
+	font-size: 18px;
 }
-h2,h3,h4 { margin: 0 0 5px 0; }
+h2,h3,h4 { margin: 10px 0px 5px 0px; }
 
 #data hr {
 	margin: 0px 40px 0px 40px;
@@ -238,7 +249,6 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 }
 
 #header {
-	font-family: Courier;
 	font-weight: bold;
 	margin-left: 30px;
 	margin-right: auto;
@@ -265,6 +275,7 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 }
 
 #rightbar {
+	display: none;
 	float: right;
 	right: 0px;
 }
@@ -285,6 +296,7 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 	bottom: 0;
 }
 #xcpg { width: 80%; }
+div.post-content { font-size: 16px; }
 
 #sidebar {
 	top: 0;
@@ -307,6 +319,14 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 	border-style: inset;
 }
 
+#navigation h1 a {
+	font-size: 32px;
+	font-family: Consolas;
+}
+#navigation h1 a:hover {
+	font-size: 32px;
+}
+
 #navigation a {
 	border: none;
 	font-family: "Helvetica Neue", "Helvetica", serif;
@@ -318,7 +338,7 @@ h2,h3,h4 { margin: 0 0 5px 0; }
 }
 
 .latestposts {
-	text-decoration: underline;
+	text-decoration: none;
 	margin: 0px 0px 0px 0px;
 	font-size: .9em;
 }
@@ -408,7 +428,7 @@ img.center {
 
 
 /*** Media Queries ***/
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1050px) {
 
 	#page, #header, #content, #data, #xc, #footer, .index-item, .post-index-cat {
 		width: inherit;
@@ -421,7 +441,9 @@ img.center {
 	#xcpg { width: 95%; }
 	
 	#header { margin-left: 10px; }
-	#rightbar { float: none; right: auto; margin-left: 0px; text-align: center; font-size: 16px;
+	#rightbar { 
+		display: block;
+		float: none; right: auto; margin-left: 0px; text-align: center; font-size: 16px;
 		margin-top: 0px; padding-top: 20px; }
 
 	#sidebar {

@@ -22,13 +22,13 @@
 
   <!-- HIGHLIGHTER SCRIPTS -->
   {% if page.highlight != null %}
-  <link rel="stylesheet" href="/assets/prism/prism{% if page.hltheme == null %}-okaidia{% else %}-{{page.hltheme}}{% endif %}.css"/>
+  <link rel="stylesheet" href="/assets/prism/prism{% if page.hltheme == null %}-github{% else %}-{{page.hltheme}}{% endif %}.css"/>
   <!-- <link rel="stylesheet" href="/assets/prism/prism-line-numbers.css"> -->
   {% endif %}
   
   <link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/aviaryan" title="RSS feed" />
   <link href="/assets/css/style.css" rel="stylesheet" />
-  <link href="/assets/css/colors-light.css" rel="stylesheet" />
+  <link href="/assets/css/colors-black.css" rel="stylesheet" />
 
 </head>
 
@@ -38,9 +38,12 @@
 
     <div id="sidebar">
       <nav id="navigation">
-          <li><a href="/"><img src="/images/profile_128.png" height="100" width="100"></a></li>
+          <li><h1><a href="/">Avi's Site</a></h1></li>
+          <!-- <a href="/"><img src="/images/profile_128.png" height="100" width="100"></a></li> -->
           <li><a href="/blog">Archive</a></li>
           <li><a href="/ahk">Ahk scripts</a></li>
+          <li><a href="/softwares.html">Softwares</a></li>
+          <li><a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">GitHub</a></li>
           <li><a href="/contact.html">Contact</a></li>
       </nav>
 
