@@ -40,11 +40,11 @@
       <nav id="navigation">
           <li><h1><a href="/">Avi's Site</a></h1></li>
           <!-- <a href="/"><img src="/images/profile_128.png" height="100" width="100"></a></li> -->
+          <li><a href="/about.html">About</a></li>
           <li><a href="/blog">Archive</a></li>
           <li><a href="/ahk">Ahk scripts</a></li>
           <li><a href="/softwares.html">Softwares</a></li>
           <li><a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">GitHub</a></li>
-          <li><a href="/contact.html">Contact</a></li>
       </nav>
 
 
@@ -85,10 +85,11 @@
       
  <div id="rightbar">
    <a href="/"><span class="inbutton">Home</span></a>
+   <a href="/about.html"><span class="inbutton">About</span></a>
    <a href="/blog"><span class="inbutton">Archive</span></a>
    <a href="/softwares.html"><span class="inbutton">Softwares</span></a>
-    <a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">
-   <span class="inbutton">GitHub</span></a>
+    <!--<a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">
+   <span class="inbutton">GitHub</span></a>-->
    <!-- <a href="http://feeds.feedburner.com/aviaryan"><span class="inbutton">Feed</span></a> -->
  <br><br> <!-- br here helps to capture div space so avoids heading to get that space -->
  </div>
