@@ -10,15 +10,19 @@ If you are really keen on utilizing those un-used Win keys , you can use the [Cl
 
 All you have to do is [get the correspoding label](http://clipjump.sourceforge.net/docs/devList.html#labels) for the feature you need and then follow the underlying example.
 
-    [win_K]
-    bind = Win + K
-    run = channelOrganizer
+```
+[win_K]
+bind = Win + K
+run = channelOrganizer
+```
 
 This uses the label `channelOrganizer` to create the shortcut `Win + k` for the 'Channel Organizer'.
 Add the above snippet to **ClipjumpCustom.ini** and restart to use `Win + k` as a shortcut for 'Channel Organizer'.
 
 Here is another one for 'Select Channel' window.
 
-    [some_name]
-    bind = Win + Shift + C
-    run = channelGUI
+```
+[some_name]
+bind = Win + Shift + C
+run = channelGUI
+```

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Simple CSS notification boxes without using any icon
-tags: css
+tags: css how-to
 highlight: 1
 brushes: ['css.min', 'markup.min']
 ---

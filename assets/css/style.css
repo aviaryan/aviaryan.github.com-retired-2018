@@ -364,7 +364,7 @@ article h1 a.anchor {
 article img {
 	display: block;
 	text-align: center;
-	margin: 0 auto 1em auto;
+	margin: 2em auto 2em auto;
 }
 
 article .meta {

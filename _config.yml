@@ -7,7 +7,6 @@ permalink: /blog/:categories/:title.html
 title: Avi Aryan
 paginate: 10
 highlighter: null
-# pygments: false
 
 # More
 author:
