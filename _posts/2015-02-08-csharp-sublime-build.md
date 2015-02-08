@@ -1,7 +1,7 @@
 ---
 layout: post
 title: C# Sublime Build
-tags: how-to sublime-text
+tags: sublime-text
 ---
 
 If you want to code in C# using Sublime Text, then this post is for you. After this post you will be able to use `Ctrl+B` to build a .cs file and `Ctrl+Shift+B` to run the exe through 
