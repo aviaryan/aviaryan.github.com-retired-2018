@@ -154,8 +154,8 @@ em, .concrete {
 .button-cat:before { content: '@ ';}
 
 .button:hover {
-	background: #31322C;
-	color: #D1D6D8;
+	background: default;
+	color: default;
 	border-color: white;
 	cursor: pointer;
 }
@@ -200,9 +200,6 @@ acronym, abbr {
 h1 {
 	font-size: 24px;
 	margin: 5px 0 7px 0;
-}
-#data h1 {
-	font-weight: bold;
 }
 h2 {
 	font-size: 22px;
