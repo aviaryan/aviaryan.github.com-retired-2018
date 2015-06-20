@@ -67,18 +67,21 @@ sub { vertical-align: sub; font-size: 0.85em; }
     font: 1em Monaco, Courier, Monospace;
 }
 
+pre {
+	margin: 1em 0.5em 1em 0.5em;
+}
+
 pre > code { 
 	/*font-family: Monaco, Courier, Monospace;*/
 	font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-	font-size: 0.9em; /* fix it - dont want large on 16px blog posts */
-	margin-top: 1em;
-	margin-bottom: 1em;
+	font-size: 0.8em; /* fix it - dont want large on 16px blog posts */
+	margin: 1em 0 1em 0;
 	padding: 1em .8em 1em .8em;
 } 
 
 pre > code[class*="language-"] {
-	font-size: 0.9em;
-	line-height: 1.3em;
+	font-size: 0.8em;
+	line-height: 1.5em;
     white-space: pre;
   /*  margin-top: -1.3em;*/
     display: block;
