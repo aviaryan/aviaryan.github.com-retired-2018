@@ -2,9 +2,6 @@
 layout: post
 title: Disable Clipjump for a particular shortcut
 category: clipjump
-highlight: 1
-brushes: ['ini']
-hltheme: github
 tags: clipjump
 ---
 
@@ -16,11 +13,11 @@ To use this plugin, you will have to set a separate ClipjumpCustom binding for t
 Here I will take example of [CintaNotes](http://cintanotes.com/) and its *Clip Text Hotkey* (Ctrl+F12) shortcut.  
 After downloading the above plugin, put this code in ClipjumpCustom.ini .
 
-<pre><code class="language-ini">
+{% highlight ini %}
 [cintanotes_clip_text]
 bind = Win + F12
 run = API.runPlugin(cjdisabledShortcut.ahk, Ctrl+F12, 1200)
-</code></pre>
+{% endhighlight %}
 
 The `CJdisabledShortcut` plugin has two parameters.  
 
@@ -36,7 +33,7 @@ don't waste a *usable* shortcut space. This is just a suggestion, just what I ha
 #### Update
 Well, you can do this with ClipjumpCustom alone, no need to use a plugin -   
 
-<pre><code class="language-ini">
+{% highlight ini %}
 [cn_clip_text]
 bind = win + f12
 run = API.blockMonitoring(1)
@@ -44,6 +41,6 @@ zsomevar = %HParse(Ctrl+F12, 1, 1, 1)%
 send = %zsomevar%
 sleep = 1200
 run = API.blockMonitoring(0)
-</code></pre>
+{% endhighlight %}
 
 Please ask if you face problems.. 

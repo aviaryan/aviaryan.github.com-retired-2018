@@ -130,10 +130,3 @@ td {
 #data .notify a[href]:hover { background-color: #e3f7fc; }
 
 /*** Pygments ***/
-.highlight{
-	background-color: #f9f9f9;
-	color: #515151;
-	border: 0px solid #d6ceb6;
-    overflow: auto;
-    padding: 6px 10px;
-}

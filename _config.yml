@@ -6,7 +6,7 @@ baseurl:
 permalink: /blog/:categories/:title.html
 title: Avi Aryan
 paginate: 10
-highlighter: null
+highlighter: pygments
 
 # More
 author:

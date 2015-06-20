@@ -17,7 +17,7 @@ the terminal.
 
 4. The create this build file for Sublime Text. Name it something like `C#.sublime-build` and store it in Data\Packages\User directory.
 
-```
+```json
 {
   "selector"  : "source.cs",
   "cmd"       : "gmcs $file_name",

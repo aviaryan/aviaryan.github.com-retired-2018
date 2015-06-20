@@ -3,9 +3,6 @@ layout: post
 title: Set max clip limits for any channel in Clipjump
 category: clipjump
 highlight: 1
-brushes: ['ini']
-hltheme: github
-tags: clipjump
 ---
 
 Clipjump by default only allows channel 0 (Default) to have limits on maximum number of clips that can be accomodated in it. In all channel other than 0, unlimited clips can be stored without resrictions. This post explains how one can impose a maximum clip limit on any channel.   
@@ -23,14 +20,14 @@ Note that you will have to set the value of <b>cn.totalclipsN</b> in a <a href="
 </p>
   
 ### Example
-<pre><code class="language-ini">
+{% highlight ini %}
 ;Customizer File for Clipjump
 ;Add your custom settings here
     
 [AutoRun]
 ; cn.totalclips1 = 30
 cn.totalclips3 = 20
-</code></pre>
+{% endhighlight %}
   
 Note that this just a *hack* so it may have some shortcomes. For example, clips will be trimmed according to the limit applied only when a new clip is 
 added in the channel because that is the time when compacting of database happens. 

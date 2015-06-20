@@ -2,8 +2,6 @@
 layout: post
 title: Simple CSS notification boxes without using any icon
 tags: css
-highlight: 1
-brushes: ['css.min', 'markup.min']
 ---
 
 This post will show you how to create message/notification boxes using CSS without using a image/icon/font icon.  
@@ -11,7 +9,7 @@ So for creating icons, we will use CSS `border-radius` property and some unicode
 <span class="symbol icon-error"></span> <span class="symbol icon-tick"></span> and <span class="symbol icon-excl"></span>.  
 Here is the style to create these 4 icons. You will notice that I have used specific fonts where needed.
 
-<pre><code class="language-css">
+{% highlight css %}
 .symbol {
 	font-size: 0.9em;
 	font-family: Times New Roman;
@@ -31,11 +29,11 @@ Here is the style to create these 4 icons. You will notice that I have used spec
 .icon-error:before { content: 'x'; }
 .icon-tick:before { content: '\002713'; }
 .icon-excl:before { content: '!'; }
-</code></pre>
+{% endhighlight %}
 
 For creating containers i.e. message boxes, we will use the following CSS code -
 
-<pre><code class="language-css">
+{% highlight css %}
 .notify {
 	background-color:#e3f7fc; 
 	color:#555; 
@@ -52,17 +50,17 @@ For creating containers i.e. message boxes, we will use the following CSS code -
 .notify-yellow { background: #fff8c4; border-color: #f7deae; }
 .notify-red { background: #ffecec; border-color: #fad9d7; }
 .notify-green { background: #e9ffd9; border-color: #D1FAB6; }
-</code></pre>
+{% endhighlight %}
 
 Use the `.notify` class with `<div>` tag to create a *streched* container. Then use the `.symbol` class to create the icon and add the message text later. Here is the 
 code for the following 4 boxes (in screenshot).
 
-<pre><code class="language-markup">
-&lt;div class=&quot;notify&quot;&gt;&lt;span class=&quot;symbol icon-info&quot;&gt;&lt;/span&gt; A kind of a notice box !&lt;/div&gt;
-&lt;div class=&quot;notify notify-red&quot;&gt;&lt;span class=&quot;symbol icon-error&quot;&gt;&lt;/span&gt; Error message&lt;/div&gt;
-&lt;div class=&quot;notify notify-green&quot;&gt;&lt;span class=&quot;symbol icon-tick&quot;&gt;&lt;/span&gt; A positive/success/completion message&lt;/div&gt;
-&lt;div class=&quot;notify notify-yellow&quot;&gt;&lt;span class=&quot;symbol icon-excl&quot;&gt;&lt;/span&gt; A warning message&lt;/div&gt;
-</code></pre>
+{% highlight html %}
+<div class="notify"><span class="symbol icon-info"></span> A kind of a notice box !</div> 
+<div class="notify notify-red"><span class="symbol icon-error"></span> Error message</div> 
+<div class="notify notify-green"><span class="symbol icon-tick"></span> A positive/success/completion message</div> 
+<div class="notify notify-yellow"><span class="symbol icon-excl"></span> A warning message</div>
+{% endhighlight %}
 
 <!-- image -->
 <img src="http://i.imgur.com/WCoo9za.png">
