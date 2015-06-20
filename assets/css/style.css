@@ -75,18 +75,16 @@ pre > code {
 	/*font-family: Monaco, Courier, Monospace;*/
 	font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
 	font-size: 0.8em; /* fix it - dont want large on 16px blog posts */
-	margin: 1em 0 1em 0;
-	padding: 1em .8em 1em .8em;
-} 
+	margin: 1em 0em 1em 0em;
+	padding: .5em .8em .5em .8em;
+}
 
 pre > code[class*="language-"] {
 	font-size: 0.8em;
 	line-height: 1.5em;
     white-space: pre;
-  /*  margin-top: -1.3em;*/
     display: block;
 }
-div[class="highlight"] > pre > code { margin-top: 0em; }
 
 /* scroll bars */
 pre {

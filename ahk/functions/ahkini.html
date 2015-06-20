@@ -3,9 +3,6 @@ layout: page
 title: AhkIni()
 tagline: Fast Ini lib with standard comment-linked support
 ghlink: https://github.com/aviaryan/autohotkey-scripts/blob/master/Functions/AhkIni.ahk
-highlight: 1
-brushes: ['ahk.min', 'ini']
-hltheme: github
 ---
 
 <a href="http://www.autohotkey.com/board/topic/95162-">Ahk Board Topic</a>
@@ -19,7 +16,7 @@ Created as a complete replacement of the default Ini commands<br /><br />
 
 <h4>Example of an Ini created through the lib</h4>
 
-<pre><code class="language-ini">
+{% highlight ini %}
 [section1]
 ;section1 comment
 key1 = hithere_key1
@@ -34,10 +31,10 @@ key3 = hithere_key3
 ;section2 comment
 key1 = hithere2
 ;keycomment2
-</code></pre>
+{% endhighlight %}
 
 <h4>The code</h4>
-<pre><code class="language-autohotkey">
+{% highlight autohotkey %}
 SetWorkingDir,% A_scriptdir
  
 Ini := new AhkIni("black2.ini")		;will create new ini if nothing exists
@@ -55,7 +52,7 @@ msgbox,% "Sections in the ini are`n`n" ini.read()
 ini.Save()
  
 #include, AhkIni.ahk
-</code></pre>
+{% endhighlight %}
     <br />
 
     <hr><br />

@@ -3,9 +3,6 @@ layout: page
 title: Talk
 tagline: Interscript communication provider
 ghlink: https://github.com/aviaryan/autohotkey-scripts/blob/master/Functions/talk.ahk
-highlight: 1
-brushes: ['autohotkey']
-hltheme: github
 ---
 
 [Ahk Topic](http://www.autohotkey.com/board/topic/94321-)  
@@ -15,6 +12,6 @@ hltheme: github
 Uses the SendMessage example from help file as a base to do the job.  
 Works with compiled exe's too.  
 
-<pre class="brush: ahk;">
+{% highlight autohotkey %}
 client := new talk("script1.ahk")
-</pre>
+{% endhighlight %}
