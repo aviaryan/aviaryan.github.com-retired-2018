@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Emojis offline
+tags: python github
 ---
 
 I am often in need of some [emojis](http://emoji.muan.co/) when committing on my github repos. As I don't have an *always on* Internet connection, I had to sacrifice them when I was not online.
