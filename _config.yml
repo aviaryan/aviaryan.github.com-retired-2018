@@ -19,4 +19,5 @@ author:
 
 googleverify: gC8gMLC1UpPDYi2y5KR_9Sq79n4TYMiQM7UcSvtyfms
 disqusid: avi-aryan-github
+disqusurl: http://aviaryan.github.io
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']

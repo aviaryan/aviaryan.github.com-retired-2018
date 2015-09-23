@@ -6,6 +6,7 @@
         var disqus_shortname = '{{ site.disqusid }}'; // required: replace example with your forum shortname
 	{% if page.rtype == "post" %}
         var disqus_identifier = "{{ site.disqusid }}/{{ page.date | date: "%Y/%m/%d" }}{{ page.id | replace: '/blog','' }}";
+        var disqus_url = "{{ site.disqusurl }}{{ page.url | replace:'index.html','' }}";
 	{% else %}
 	var disqus_identifier = "{{ site.disqusid }}{{ page.url | replace:'index.html','' }}";
 	{% endif %}
