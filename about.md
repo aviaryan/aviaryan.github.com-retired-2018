@@ -3,11 +3,12 @@ layout: default
 title: About Me
 ---
 
-Hi there !   
-I am Avi Aryan currently pursuing B.Tech in Information Technology in [IIIT Vadodara, India](http://www.iiitvadodara.ac.in/).  
-My current passions are coding, web-designing and counter strike.  
+Hi there !
 
-You can find me on -  
+I am Avi Aryan currently pursuing B.Tech in Information Technology in [IIIT Vadodara, India](http://www.iiitvadodara.ac.in/).
+My current passions are coding, web-designing and counter strike.
+
+You can find me on - 
 
 * [GitHub](http://github.com/{{ site.author.github }})
 * [Twitter](http://twitter.com/{{ site.author.twitter }})

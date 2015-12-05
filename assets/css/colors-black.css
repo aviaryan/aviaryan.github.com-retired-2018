@@ -50,6 +50,13 @@ h1 a:hover {
 
 /* Singular styles */
 
+#navigation h1 a {
+	color: #A0A0A0;
+}
+#navigation h1 a:hover {
+	color: #909090;
+}
+
 .post-index-cat {
 	background-color: #f9f9f9;
 }
@@ -59,7 +66,7 @@ blockquote {
 }
 
 #sidebar, #sidebar a {
-	color: #ffffff;
+	color: #dddddd;
 }
 #sidebar a:hover {
 	color: #ffffff;

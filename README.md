@@ -24,5 +24,5 @@ limitations under the License.
 
 ### To-Do
 
-* A visual representation for "Categories"
+* ~~A visual representation for "Categories"~~
 * ~~GitHub and Feed button~~
