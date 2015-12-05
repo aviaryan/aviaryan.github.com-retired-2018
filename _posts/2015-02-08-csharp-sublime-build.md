@@ -17,7 +17,7 @@ the terminal.
 
 4. The create this build file for Sublime Text. Name it something like `C#.sublime-build` and store it in Data\Packages\User directory.
 
-```json
+{% highlight json %}
 {
   "selector"  : "source.cs",
   "cmd"       : "gmcs $file_name",
@@ -42,7 +42,7 @@ the terminal.
     }
   ]
 }
-```
+{% endhighlight %}
   
   
 **Disclaimer** - I took the base of .sublime-build from [this repo](https://github.com/chrokh/csharp-build-singlefile-sublime-text-2). I submitted a [pull request](https://github.com/chrokh/csharp-build-singlefile-sublime-text-2/pull/3) too with the enhancements.
