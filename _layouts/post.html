@@ -1,6 +1,6 @@
 ---
-layout: default
 rtype: post
+layout: default
 ---
 <article class="post">
 
@@ -15,7 +15,9 @@ rtype: post
 	
 	<br>
 	<hr>
-	<p>{% for tag in page.tags %}<a href="/blog/tags.html#{{ tag }}"> <span class="button button-tag">{{tag}}</span> </a> {% endfor %}</p>
+	<div id="post-tags">
+		<p>{% for tag in page.tags %}<a href="/blog/tags.html#{{ tag }}"> <span class="button button-tag">{{tag}}</span> </a> {% endfor %}</p>
+	</div>
 	<p><a href="http://www.facebook.com/sharer.php?u={{ site.fullpath }}{{ page.url | escape }}"><span class="button noborder facebook white">Facebook</span></a> 
 		 <a href="http://twitter.com/intent/tweet?text={{ page.title | escape }}&url={{ site.fullpath }}{{ page.url | escape }}&via={{ site.author.twitter }}"><span class="button noborder twitter white">Twitter</span></a> 
 		 <a href="https://plus.google.com/share?url={{ site.fullpath }}{{ page.url | escape }}"><span class="button noborder gplus white">Google+</span></a></p>

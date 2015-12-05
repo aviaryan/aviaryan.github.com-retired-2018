@@ -389,6 +389,9 @@ img.center {
 	margin: 0 auto 1em auto;
 }
 
+#post-tags {
+	margin-top: 20px;
+}
 
 /* Post index */
 
@@ -409,22 +412,6 @@ img.center {
 	width: 100%;
 	background-color: #EAEAEA;
 }
-
-/*** Pagination ***/
-.postnavigation {
-	padding-top: 10px;
-    text-align: center;
-    font-size: 0.85em;
-}
-
-.postnavigation .left {
-	float: left;
-}
-
-.postnavigation .right {
-	float: right;
-}
-
 
 /** Very Custom settings **/
 

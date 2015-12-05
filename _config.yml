@@ -1,12 +1,14 @@
 name: Avi Aryan
-markdown: redcarpet
+
+markdown: kramdown
+
 fullpath: http://aviaryan.in
 description: Personal Website
 baseurl: 
 permalink: /blog/:categories/:title.html
 title: Avi Aryan
-paginate: 10
-highlighter: pygments
+
+highlighter: rouge
 
 # More
 author:
