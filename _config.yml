@@ -8,7 +8,7 @@ baseurl:
 permalink: /blog/:categories/:title.html
 title: Avi Aryan
 
-highlighter: pygments
+highlighter: rouge
 
 # More
 author:
