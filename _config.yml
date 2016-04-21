@@ -23,3 +23,4 @@ googleverify: gC8gMLC1UpPDYi2y5KR_9Sq79n4TYMiQM7UcSvtyfms
 disqusid: avi-aryan-github
 disqusurl: http://aviaryan.in
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+jekyllversion: 3.0.3
