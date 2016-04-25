@@ -40,7 +40,7 @@ table.inline td { padding-left: 10px; }
 
 /*** Basics ***/
 body {
-	font-family: Verdana, serif;
+	font-family: Verdana, sans-serif;
 	font-size: 14px;
 	line-height: 1.7;
 }

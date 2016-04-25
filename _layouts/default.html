@@ -1,3 +1,10 @@
+<!-- bug in Jekyll 3.0.3 -->
+{% if layout.rtype != null %}
+  {% assign rtype = layout.rtype %}
+{% else %}
+  {% assign rtype = page.rtype %}
+{% endif %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +58,7 @@
       </nav>
 
 
-      {% if page.rtype != "post" %}
+      {% if rtype != "post" %}
         <li class="divider"></li>
         <li><strong>Latest Posts</strong></li>
         <li class="latestposts-box">
@@ -78,7 +85,7 @@
     <br><br> <!-- extra space in case of small page -->
     </div>
 
-    {% if page.rtype == "page" %}
+    {% if rtype == "page" %}
       {% capture xcid %}xcpg{% endcapture %}
     {% else %}
       {% capture xcid %}xc{% endcapture %}
@@ -102,7 +109,7 @@
         <span class="header_title">
         <h1>{{ page.title }}</h1>
         <span class="tagline"><small>
-        {% if page.rtype == "post" %}
+        {% if rtype == "post" %}
         by <a href="https://plus.google.com/u/0/+{{ site.author.google }}/posts">{{ site.author.fullname }}</a> <span style="margin: 0px 5px 0px 5px;">|</span>
         <span class="post_date">{{ page.date | date: "%b %d, %Y" }}</span>
         {% else %}
@@ -113,7 +120,7 @@
     
     <br><br><br>
 
-    {% if page.rtype == null %}
+    {% if rtype == null %}
     <div id="data">
      
       {{ content }}
@@ -123,12 +130,12 @@
       {{ content }}
     {% endif %}
   
-  <!-- rtype {{ page.rtype }} -->
-  {% if page.rtype == "post" %}
+  <!-- rtype {{ rtype }} -->
+  {% if rtype == "post" %}
     {% if page.nod == null %}
       {% include disqus.html %}
    {% endif %}
-  {% elsif page.rtype == "page" %}
+  {% elsif rtype == "page" %}
     {% if page.nod == null %}
       {% include disqus_notauto.html %}
     {% endif %}

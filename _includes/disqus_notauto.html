@@ -1,3 +1,10 @@
+<!-- bug in Jekyll 3.0.3 -->
+{% if layout.rtype != null %}
+  {% assign rtype = layout.rtype %}
+{% else %}
+  {% assign rtype = page.rtype %}
+{% endif %}
+
 <br>
 <div id='disqus_button'>
 <a onclick ="javascript:disqus_show(1)" href="javascript:;"><button style="display: block;">Load Comments/Disqus</button></a>
@@ -17,7 +24,7 @@
 
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = '{{ site.disqusid }}'; // required: replace example with your forum shortname
-	{% if page.rtype == "post" %}
+	{% if rtype == "post" %}
         var disqus_identifier = "{{ site.disqusid }}/{{ page.date | date: "%Y/%m/%d" }}{{ page.id | replace: '/blog','' }}";
 	{% else %}
 	var disqus_identifier = "{{ site.disqusid }}{{ page.url | replace:'index.html','' }}";
