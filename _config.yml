@@ -10,6 +10,10 @@ title: Avi Aryan
 
 highlighter: rouge
 
+gems:
+  - jemoji
+  - jekyll-mentions
+
 # More
 author:
     fullname: Avi Aryan

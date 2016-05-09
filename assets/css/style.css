@@ -369,6 +369,12 @@ article img {
 	margin: 2em auto 2em auto;
 }
 
+article img.emoji {
+	display: inline;
+	text-align: left;
+	margin: 0;
+}
+
 article .meta {
 	padding-top: 6px;
 	font-size: 0.85em;
