@@ -3,7 +3,7 @@ name: Avi Aryan
 markdown: kramdown
 
 fullpath: http://aviaryan.in
-description: Personal Website
+description: Avi Aryan's personal website
 baseurl: 
 permalink: /blog/:categories/:title.html
 title: Avi Aryan

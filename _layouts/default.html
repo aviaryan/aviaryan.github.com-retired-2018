@@ -130,7 +130,7 @@
       {{ content }}
     {% endif %}
   
-  <!-- rtype {{ rtype }} -->
+  <!-- rtype l{{ layout.rtype }} p{{ page.rtype }}-->
   {% if rtype == "post" %}
     {% if page.nod == null %}
       {% include disqus.html %}
