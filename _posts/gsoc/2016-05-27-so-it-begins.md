@@ -23,7 +23,7 @@ Apart from that, the project will feature a rich API which can used by other ser
 Me and @shivamMg are responsible for the REST API part of the project. The plan is to build a full-proof API that will cover the entire scope of the application. 
 We have started the work using [Flask-Restplus](http://flask-restplus.readthedocs.io/) as the framework. The GET API part has been done. 
 Now what is needed is to add the PUT, POST and DELETE verbs. 
-We will soon get to it and plan to have a basic version ready before the midterm. (26th June)
+We will soon get to it and plan to have a basic version ready before the midterm (26th June). 
 Once midterm is done, we will work on enhancing the API, finding and fixing bug cases, writing docs and improving overall project quality. 
 
 This is getting so much fun. The next 3 months will be full of heavy coding. Probably my GitHub streak will cross 100 days :stuck_out_tongue_winking_eye:. 
