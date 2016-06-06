@@ -111,7 +111,7 @@ def requires_auth(f):
 
 Pretty easy right !! Also notice that I am saving the user who was currently authenticated in flask's global variable `g`. 
 Now the authenticated user can be accessed from views as `g.user`. Cool, isn't it ?
-Now, if there is a need to add a more secure form of authorization like 'Token' based, you can easily update the `requires_auth` decorator to get the same results. 
+Now if there is a need to add a more secure form of authorization like 'Token' based, you can easily update the `requires_auth` decorator to get the same results. 
 
 I hope this article provided valuable insight into managing REST API authorizations in Flask. I will keep posting more awesome things I learn in my GSoC journey. 
 
