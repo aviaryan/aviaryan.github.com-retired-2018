@@ -63,6 +63,7 @@ def requires_auth(f):
 		user = UserModel.query.filter_by(username=auth.username).first()
 		if user is None or user.password != auth.password:
 			abort(401)
+		return f(*args, **kwargs)
 	return decorated
 
 @app.route('/view')
@@ -104,6 +105,7 @@ def requires_auth(f):
 		if user is None or user.password != auth.password:
 			abort(401)
 		g.user = user
+		return f(*args, **kwargs)
 	return decorated
 {% endhighlight %}
 

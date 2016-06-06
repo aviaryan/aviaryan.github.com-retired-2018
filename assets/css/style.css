@@ -76,15 +76,17 @@ pre > code {
 	font-family: Anonymous Pro;
 	font-size: 0.8em; /* fix it - dont want large on 16px blog posts */
 	margin: 1em 0em 1em 0em;
-	padding: .5em .8em .5em .8em;
+	padding: .5em 1em .5em 1em;
+	color: #444444;
 }
 
 pre > code[class*="language-"] {
-	font-size: 0.9em;
+	font-size: 0.8em;
 	line-height: 1.5em;
     white-space: pre;
     padding-top: 0;
     padding-bottom: 0;
+    tab-size: 3;
     display: block;
 }
 
