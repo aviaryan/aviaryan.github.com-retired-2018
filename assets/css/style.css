@@ -460,6 +460,12 @@ img.center {
 	}
 }
 
+@media all and (max-width: 750px) {
+	pre > code {
+		overflow-x: scroll;
+	}
+}
+
 @media only screen and (max-width: 480px) { /* mobiles */
 	#content { margin-left: 0px; padding: 0px; }
 	#header { margin-left: 0px; }
