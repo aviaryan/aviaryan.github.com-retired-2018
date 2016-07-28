@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Downloading File from URL in Python
+title: Downloading Files from URLs in Python
 category: gsoc
 tags: gsoc gsoc16 python
 ---
