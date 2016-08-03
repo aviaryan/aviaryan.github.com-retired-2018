@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Testing Docker Deployement using Travis
+title: Testing Docker Deployment using Travis
 category: gsoc
 tags: gsoc gsoc16 docker
 ---
