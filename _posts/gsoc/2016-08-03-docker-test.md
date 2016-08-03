@@ -29,7 +29,7 @@ install:
   - docker run -d -p 127.0.0.1:80:4000 --name myapp myapp
 {% endhighlight %}
 
-The 4000 in the above text is assuming your app runs on port 4000 inside the container. 
+The 4000 in the above text is assuming your app runs on port 4000 inside the container. Also it is assumed that the `Dockerfile` is in the root of the repo. 
 
 So now that the docker app is running, it's time to test it. 
 
