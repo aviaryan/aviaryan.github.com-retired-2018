@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dynamically marshaling output in Flask Restplus
+title: Dynamically marshalling output in Flask Restplus
 category: gsoc
 tags: gsoc gsoc16 flask-restplus flask
 ---
@@ -64,8 +64,8 @@ def selective_marshal_with(fields, fields_private):
     return decorator
 {% endhighlight %}
 
-The above code adds a wrapper over the API function which checks if the user is authenticated. If the user is authenticated, `fields` model is used for marshaling else 
-`fields_private` is used for marshaling. 
+The above code adds a wrapper over the API function which checks if the user is authenticated. If the user is authenticated, `fields` model is used for marshalling else 
+`fields_private` is used for marshalling. 
 
 So let's create the private model for `SPEAKER`. We will call it `SPEAKER_PRIVATE`. 
 
@@ -90,7 +90,7 @@ class Speaker(Resource):
         return DAO.get(speaker_id)
 {% endhighlight %}
 
-You will notice that I removed `@api.marshal_with(SPEAKER)`. This was to disable automatic marshaling of output by flask-restplus. To compensate for this, I have added 
+You will notice that I removed `@api.marshal_with(SPEAKER)`. This was to disable automatic marshalling of output by flask-restplus. To compensate for this, I have added 
 `model=SPEAKER` in `api.doc`. It will not auto-marshal the output but will still show the swagger documentation. 
 
 That concludes this. The get method will now switch `marshal` field w.r.t to the authentication level of the user.
