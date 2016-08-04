@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dynamically marshalling output in Flask Restplus
+title: Dynamically marshaling output in Flask Restplus
 category: gsoc
 tags: gsoc gsoc16 flask-restplus flask
 ---
