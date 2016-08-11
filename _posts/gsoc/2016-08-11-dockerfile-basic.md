@@ -16,7 +16,7 @@ This is the fundamental advantage of Docker and why it was created.
 
 So let's start our dive into Docker. 
 
-Docker works using Dockerfile, a file which specifies how Docker is supposed to build your application.
+Docker works using Dockerfile ([example](https://github.com/fossasia/open-event-orga-server/blob/master/Dockerfile)), a file which specifies how Docker is supposed to build your application.
 It contains the steps Docker is supposed to follow to package your app. Once that is done, you can send this packaged app to anyone and they can run it on their system with 
 no problems.
 
@@ -82,7 +82,7 @@ You might be thinking why am I installing Python here. Isn't it present by defau
 Similarly if you are installing some Python package that requires gcc, it will not work. When you are struck in a issue like that, try googling the error message and most 
 likely you will find an answer. :grinning:
 
-The last thing remaining now is to run your app. With this, your Dockerfile is complete.
+The last thing remaining now is to run your app. With this, your Dockerfile is complete. 
 
 {% highlight bash %}
 CMD python app.py
