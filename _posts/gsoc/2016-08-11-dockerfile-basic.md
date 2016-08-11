@@ -5,7 +5,7 @@ category: gsoc
 tags: gsoc gsoc16 docker
 ---
 
-In this tutorial, I will teach you how to write your first `Dockerfile`. 
+In this tutorial, I will show you how to write your first `Dockerfile`. 
 I got to learn Docker because I had to implement a [Docker](http://docker.com) deployment for our GSoC project [Open Event Server](https://github.com/aviaryan/open-event-orga-server).
 
 First up, what is Docker ? 
