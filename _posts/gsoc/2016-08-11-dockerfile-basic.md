@@ -32,7 +32,7 @@ Let's start with the project structure. You will have to keep `Dockerfile` at th
 {% endhighlight %}
 
 Dockerfile starts with a base image that decides on which image your app should be built upon. Basically "Images" are nothing but apps. 
-So for example you want your run your application on Ubuntu 14.04, you use [ubuntu:14.04](https://hub.docker.com/_/ubuntu/) as the base image.
+So for example you want your run your application in Ubuntu 14.04 VM, you use [ubuntu:14.04](https://hub.docker.com/_/ubuntu/) as the base image.
 
 {% highlight bash %}
 FROM ubuntu:14.04
@@ -40,7 +40,7 @@ MAINTAINER Your Name <your@email.com>
 {% endhighlight %}
 
 These are usually the first two lines of a Dockerfile and they specify the base image and Dockerfile maintainer respectively. 
-You can look into [Docker Hub](https://hub.docker.com/) for the base images.
+You can look into [Docker Hub](https://hub.docker.com/) for more base images.
 
 Now that we have started our Dockerfile, it's time to do something. Now think, if you are trying to run your app on a new system of Ubuntu, what will be the first step you 
 will do... You update the package lists.
@@ -68,7 +68,7 @@ COPY . .
 {% endhighlight %}
 
 Right now we were at the root of the ubuntu instance i.e. in parallel with /var, /home, /root etc. You surely don't want to copy your files there.
-So we create a 'myapp' directory and set it as WORKDIR (project' directory). From now on, all commands will run inside it. 
+So we create a 'myapp' directory and set it as WORKDIR (project's directory). From now on, all commands will run inside it. 
 
 Now that copying the app has been done, you may want to install it's requirements.
 
@@ -100,7 +100,7 @@ docker build -t myapp .
 Then to run the app, execute `docker run myapp`.
 
 
-#### Road Ahead
+#### Where to go next
 
 Refer to the [official Dockerfile reference](https://docs.docker.com/engine/reference/builder/) to learn more Dockerfile commands. 
 Also you may find my post on [using Travis to test Docker applications](http://aviaryan.in/blog/gsoc/docker-test.html) interesting if you want to automate testing of your Docker application.
