@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Small Docker images using AlpineLinux
+title: Small Docker images using Alpine Linux
 category: gsoc
 tags: gsoc gsoc16 docker
 ---
