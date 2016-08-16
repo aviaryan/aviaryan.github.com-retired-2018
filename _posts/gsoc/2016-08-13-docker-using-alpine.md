@@ -14,7 +14,7 @@ packages.
 apk add python gcc
 {% endhighlight %}
 
-In this post, my main motto is how to squeeze the best of AlpineLinux to create the smallest possible Docker image. So let's start.
+In this post, my main motto is how to squeeze the best out of AlpineLinux to create the smallest possible Docker image. So let's start.
 
 
 ### Step 1: Use AlpineLinux based images
