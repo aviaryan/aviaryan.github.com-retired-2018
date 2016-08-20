@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Getting started with Docker compose
+title: Getting started with Docker Compose
 category: gsoc
 tags: gsoc gsoc16 docker
 ---
@@ -10,7 +10,7 @@ In this post, I will talk about running multiple containers at once using [Docke
 
 #### The problem ?
 
-Suppose you have a complex app with Database containers, volumes and Redis. How are you going to start the app. 
+Suppose you have a complex app with Database containers, Redis and what not. How are you going to start the app ?
 One way is to write a shell script that starts the containers one by one. 
 
 {% highlight bash %}
@@ -19,7 +19,7 @@ docker run redis:3-alpine --name myredis -d
 docker run myapp -d
 {% endhighlight %}
 
-Now suppose these containers have lots of configurations (links, volumes, ports, environment variables) that they need when started. You will have to write those parameters 
+Now suppose these containers have lots of configurations (links, volumes, ports, environment variables) that they need to function. You will have to write those parameters 
 in the shell script.
 
 {% highlight bash %}
@@ -37,10 +37,10 @@ Won't it get un-manageable ? Won't it be great if we had a cleaner way to runnin
 #### Docker compose
 
 [Docker compose](https://docs.docker.com/compose/) is a python package which does the job of handling multiple containers for an application very elegantly. 
-The main file of docker-compose is `docker-compose.yml` which is a YAML like syntax file with the settings/componenets required to run your app. 
+The main file of docker-compose is `docker-compose.yml` which is a YAML like syntax file with the settings/components required to run your app. 
 Once you define that file, you can just do `docker-compose up` to start your app with all the components and settings. Pretty cool, right ?
 
-So let's see an example of docker-compose.yml for the above example. 
+So let's see the docker-compose.yml for the fictional app we have considered above.
 
 {% highlight yaml %}
 version: '2'
@@ -87,7 +87,7 @@ You can see a full list on the official [docker-compose reference](https://docs.
 
 It's no doubt that docker-compose is a boon when you have to run complex applications. It personally use Compose in every dockerized application that I write. 
 In GSoC 16, I dockerized [Open Event](https://github.com/fossasia/open-event-orga-server). 
-Here is the [docker-compose.yml](https://github.com/fossasia/open-event-orga-server/blob/development/docker-compose.yml) file if you interested. 
+Here is the [docker-compose.yml](https://github.com/fossasia/open-event-orga-server/blob/development/docker-compose.yml) file if you are interested. 
 
 PS - If you liked this post, you might find my [other posts on Docker](http://aviaryan.in/blog/tags.html#docker) interesting. Do take a look and let me know your views. 
 
