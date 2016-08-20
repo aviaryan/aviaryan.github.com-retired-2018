@@ -88,3 +88,6 @@ You can see a full list on the official [docker-compose reference](https://docs.
 It's no doubt that docker-compose is a boon when you have to run complex applications. It personally use Compose in every dockerized application that I write. 
 In GSoC 16, I dockerized [Open Event](https://github.com/fossasia/open-event-orga-server). 
 Here is the [docker-compose.yml](https://github.com/fossasia/open-event-orga-server/blob/development/docker-compose.yml) file if you interested. 
+
+PS - If you liked this post, you might find my [other posts on Docker](http://aviaryan.in/blog/tags.html#docker) interesting. Do take a look and let me know your views. 
+
