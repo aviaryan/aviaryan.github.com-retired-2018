@@ -327,28 +327,37 @@ div.post-content { font-size: 16px; }
 
 #navigation h1 a {
 	font-size: 32px;
-	font-family: "Times New Roman";
+	font-family: 'Raleway', 'Times New Roman', sans-serif;
 }
+
 #navigation h1 a:hover {
 	font-size: 32px;
 }
 
 #navigation a {
 	border: none;
-	font-family: "Helvetica Neue", "Helvetica", serif;
+	font-family: 'Raleway', 'Helvetica Neue', "Helvetica", sans-serif;
 	font-size: 1.2em;
 	padding: 2px 4px;
 }
+
 #navigation a:hover {
 	font-size: 1.2em;
+}
+
+.latestposts-header {
+	font-size: 1.8em;
+	font-family: 'Raleway', sans-serif;
 }
 
 .latestposts {
 	text-decoration: none;
 	margin: 0px 0px 0px 0px;
 	font-size: .9em;
+	font-family: 'Raleway', sans-serif;
 }
-.latestposts:before { content: '> ';}
+
+.latestposts:before { content: '';}
 
 
 /*** Posts ***/

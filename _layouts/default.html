@@ -28,6 +28,7 @@
 
   <!-- fonts -->
   <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro:700,400' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
   <!-- stylesheets -->
   <link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/aviaryan" title="RSS feed" />
@@ -56,13 +57,13 @@
 
 
       {% if layout.rtype != "post" %}
-        <li class="divider"></li>
-        <li><strong>Latest Posts</strong></li>
-        <li class="latestposts-box">
+        <li class="latestposts-header">Latest Posts</li>
         {% for post in site.posts limit:5%}
+        <li class="latestposts-box">
          <a href="{{ post.url }}"> <span class="latestposts">{{ post.title }}</span> </a><br>
-        {% endfor %}
         </li>
+        {% endfor %}
+        <li></li>  <!-- for last line -->
       {% else %}
         {% if page.category != null %}
         <li class="divider"></li>
