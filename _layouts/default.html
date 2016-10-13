@@ -102,20 +102,21 @@
  </div>
       
       <br>
-      <header id="header">
-        <span class="header_title">
-        <h1>{{ page.title }}</h1>
-        <span class="tagline"><small>
-        {% if layout.rtype == "post" %}
-        by <a href="https://plus.google.com/u/0/+{{ site.author.google }}/posts">{{ site.author.fullname }}</a> <span style="margin: 0px 5px 0px 5px;">|</span>
-        <span class="post_date">{{ page.date | date: "%b %d, %Y" }}</span>
-        {% else %}
-        {{ page.tagline }}{% endif %}</small></span>
-        </span>
-      </header>
     <div id="{{ xcid }}">
+
+    <header id="header">
+      <span class="header_title">
+      <h1>{{ page.title }}</h1>
+      <span class="tagline"><small>
+      {% if layout.rtype == "post" %}
+      by <a href="https://plus.google.com/u/0/+{{ site.author.google }}/posts">{{ site.author.fullname }}</a> <span style="margin: 0px 5px 0px 5px;">|</span>
+      <span class="post_date">{{ page.date | date: "%b %d, %Y" }}</span>
+      {% else %}
+      {{ page.tagline }}{% endif %}</small></span>
+      </span>
+    </header>
     
-    <br><br><br>
+    <br><br>
 
     {% if layout.rtype == null %}
     <div id="data">
