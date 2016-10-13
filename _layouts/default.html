@@ -66,13 +66,12 @@
         <li></li>  <!-- for last line -->
       {% else %}
         {% if page.category != null %}
-        <li class="divider"></li>
-        <li><strong>Category</strong></li>
-        <li><font class="heading"><a href="/blog/{{ page.category }}/"><span class="button button-cat">{{ page.category }}</span></a></font></li>
+        <li class="navigation-header-small latestposts-header">Category</li>
+        <li class="top-xs bottom-xs"><font class="heading"><a href="/blog/{{ page.category }}/"><span class="button button-cat">{{ page.category }}</span></a></font></li>
         {% endif %}
-        <li class="divider"></li>
-        <li><strong>Tags</strong></li>
-        <li>
+
+        <li class="navigation-header-small latestposts-header">Tags</li>
+        <li class="top-xs">
         <a href="/blog/tags.html#untagged"><span class="button button-tag">Untagged</span></a>
         {% for tag in site.tags %}<a href="/blog/tags.html#{{ tag | first }}">
         <span class="button button-tag">{{ tag | first }}</span></a>
