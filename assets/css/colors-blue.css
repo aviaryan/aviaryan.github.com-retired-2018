@@ -100,12 +100,12 @@ blockquote {
 
 .button-tag {
 	background: rgba(0, 150, 136, 0.7);
-	color: #d3d3d3;
+	color: whitesmoke;
 	border-color: #272822;
 }
 
 .button-tag:hover {
-	background: rgba(0, 150, 136, 0.45);
+	background: rgba(0, 80, 73, 0.8);
 	border: 1px solid transparent;
 }
 
