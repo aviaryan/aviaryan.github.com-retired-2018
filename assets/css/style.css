@@ -370,11 +370,6 @@ div.post-content { font-size: 16px; }
 	font-size: 1.4em !important;
 }
 
-.latestposts-header {
-	font-size: 1.8em;
-	font-family: 'Raleway', sans-serif;
-}
-
 .latestposts {
 	text-decoration: none;
 	margin: 0px 0px 0px 0px;
@@ -466,11 +461,6 @@ img.center {
 	padding: 8px 25px;
 }
 
-.latestposts-header {
-	padding: 0 25px;
-	font-size: 20px;
-}
-
 .latestposts::before {
 	content: '>';
 	margin-right: 6px;
@@ -483,6 +473,15 @@ img.center {
 
 #sidebar .meta .name a{
 	padding: 5px 10px;
+}
+
+.tag-list, .category-list {
+	padding: 0 20px;
+}
+
+.tag-list > a, .category-list a {
+	display: inline-block !important;
+	padding: 0;
 }
 
 /** Very Custom settings **/
