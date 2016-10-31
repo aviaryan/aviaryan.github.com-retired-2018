@@ -4,9 +4,14 @@ title: Home
 nod: 1
 ---
 
-{% for post in site.posts limit:5%}
-    <h1>{{ post.title }}</h1>
-    {{ post.content | strip_html | truncatewords: 70 }}
-    <br><span style="float: right"><a href="{{ post.url }}">More &rarr;</a></span>
-<br><br><br>
-{% endfor %}
+<div class="post-list">
+    {% for post in site.posts limit:5%}
+    <div class="post-item">
+        <h1 class="post-title">{{ post.title }}</h1>
+        <div class="post-content">
+            {{ post.content | strip_html | truncatewords: 70 }}
+        </div>
+        <span style="float: right"><a href="{{ post.url }}">More &rarr;</a></span>
+    </div>
+    {% endfor %}
+</div>

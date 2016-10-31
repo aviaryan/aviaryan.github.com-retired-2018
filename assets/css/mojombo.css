@@ -1,5 +1,5 @@
 /** https://github.com/mojombo/tpw/blob/master/css/syntax.css **/
-.highlight pre { background: #eeeeee; border: 1px solid;}
+.highlight pre { background: rgb(241, 241, 241); padding: 10px 15px;}
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
