@@ -28,12 +28,12 @@
 
   <!-- fonts -->
   <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro:700,400' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,400" rel="stylesheet">
 
   <!-- stylesheets -->
   <link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/aviaryan" title="RSS feed" />
   <link href="/assets/css/style.css" rel="stylesheet" />
-  <link href="/assets/css/colors-black.css" rel="stylesheet" />
+  <link href="/assets/css/colors-blue.css" rel="stylesheet" />
   <link href="/assets/css/mojombo.css" rel="stylesheet" />
 
 {% include ga.html %}
@@ -46,40 +46,49 @@
 
     <div id="sidebar">
       <nav id="navigation">
-          <li><h1><a href="/about.html" style="display: inline-block; width: inherit;">Avi Aryan</a></h1></li>
+          <div class="profile">
+              <img src="/images/profile.png" class="profile__pic"/>
+              <div class="meta">
+                  <h3 class="name text-center"><a href="/about.html">Avi Aryan</a></h3>
+              </div>
+          </div>
+          <!--<li><h1><a href="/about.html" style="display: inline-block; width: inherit;">Avi Aryan</a></h1></li>-->
           <!-- <a href="/"><img src="/images/profile_128.png" height="100" width="100"></a></li> -->
-          <li><a href="/">Home</a></li>
-          <li><a href="/blog">Archive</a></li>
-          <li><a href="/ahk">Ahk scripts</a></li>
-          <!-- <li><a href="/softwares.html">Softwares</a></li> OUTDATED -->
-          <li><a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">GitHub</a></li>
+          <div class="site-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/blog">Archive</a></li>
+              <li><a href="/ahk">Ahk scripts</a></li>
+              <!-- <li><a href="/softwares.html">Softwares</a></li> OUTDATED -->
+              <li><a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">GitHub</a></li>
+          </div>
       </nav>
 
+        <div class="latest-post">
+            {% if layout.rtype != "post" %}
+            <li class="latestposts-header">Latest Posts</li>
+            {% for post in site.posts limit:5%}
+            <li class="latestposts-box">
+                <a href="{{ post.url }}"> <span class="latestposts">{{ post.title }}</span> </a>
+            </li>
+            {% endfor %}
+            <li></li>  <!-- for last line -->
+            {% else %}
+            {% if page.category != null %}
+            <li class="navigation-header-small latestposts-header">Category</li>
+            <li class="top-xs category-list bottom-xs"><font class="heading"><a href="/blog/{{ page.category }}/"><span class="button button-cat">{{ page.category }}</span></a></font></li>
+            {% endif %}
 
-      {% if layout.rtype != "post" %}
-        <li class="latestposts-header">Latest Posts</li>
-        {% for post in site.posts limit:5%}
-        <li class="latestposts-box">
-         <a href="{{ post.url }}"> <span class="latestposts">{{ post.title }}</span> </a><br>
-        </li>
-        {% endfor %}
-        <li></li>  <!-- for last line -->
-      {% else %}
-        {% if page.category != null %}
-        <li class="navigation-header-small latestposts-header">Category</li>
-        <li class="top-xs bottom-xs"><font class="heading"><a href="/blog/{{ page.category }}/"><span class="button button-cat">{{ page.category }}</span></a></font></li>
-        {% endif %}
-
-        <li class="navigation-header-small latestposts-header">Tags</li>
-        <li class="top-xs">
-        <a href="/blog/tags.html#untagged"><span class="button button-tag">Untagged</span></a>
-        {% for tag in site.tags %}<a href="/blog/tags.html#{{ tag | first }}">
-        <span class="button button-tag">{{ tag | first }}</span></a>
-        {% endfor %}
-        </li>
-      {% endif %}
+            <li class="navigation-header-small latestposts-header">Tags</li>
+            <li class="top-xs tag-list">
+                <a href="/blog/tags.html#untagged"><span class="button button-tag">Untagged</span></a>
+                {% for tag in site.tags %}<a href="/blog/tags.html#{{ tag | first }}">
+                <span class="button button-tag">{{ tag | first }}</span></a>
+                {% endfor %}
+            </li>
+            {% endif %}
+        </div>
     
-    <br><br> <!-- extra space in case of small page -->
+    <!--<br><br> &lt;!&ndash; extra space in case of small page &ndash;&gt;-->
     </div>
 
     {% if layout.rtype == "page" %}
