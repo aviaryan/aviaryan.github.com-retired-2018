@@ -17,4 +17,6 @@ You can find me on -
 * [LinkedIn](https://in.linkedin.com/in/aviaryan)
 * [Angel](https://angel.co/aviaryan)
 
-You can telegram me at [aviaryan](http://telegram.me/aviaryan)
+You can telegram me at [aviaryan](http://telegram.me/aviaryan).
+
+PS - If you are a recruiter, please have a look at my [resume](https://drive.google.com/open?id=0B1I7ETQXT-TFR3NBQVVwazhnb2c).
