@@ -14,6 +14,7 @@ You can find me on -
 * [Twitter](http://twitter.com/{{ site.author.twitter }})
 * [Facebook](http://facebook.com/{{ site.author.facebook }})
 * [Google+](http://google.com/+{{ site.author.google }})
+* [Instagram](https://www.instagram.com/aviaryan123/)
 * [LinkedIn](https://in.linkedin.com/in/aviaryan)
 * [Angel](https://angel.co/aviaryan)
 
