@@ -216,11 +216,11 @@ h3 {
 h4 {
 	font-size: 18px;
 }
-h2,h3,h4 { margin: 10px 0px 5px 0px; }
+h2,h3,h4 { margin: 35px 0px 5px 0px; }
 
 #data hr {
-	margin: 0px 40px 0px 40px;
-	height: 3px;
+	margin: 20px 10px 20px 10px;
+	height: 2px;
 	border: 0px;
 }
 
