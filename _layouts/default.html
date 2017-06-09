@@ -38,6 +38,11 @@
 
 {% include ga.html %}
 
+{% if layout.rtype == "post" %}
+  <!-- meta for blog posts -->
+  {% include meta_json_ld.html %}
+{% endif %}
+
 </head>
 
 <body>

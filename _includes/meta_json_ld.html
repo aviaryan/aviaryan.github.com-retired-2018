@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "BlogPosting",
+	"mainEntityOfPage": "{{ site.fullpath }}{{ page.url }}",
+	"headline": "{{ page.title }}",
+	"datePublished": "{{ page.date }}",
+	"dateModified": "{{ page.date }}",
+	"description": "{{ page.content | strip_html | truncatewords: 100 }}",
+	"author": {
+		"@type": "Person",
+		"name": "{{ site.author.fullname }}"
+	},
+	"publisher": {
+		"@type": "Person",
+		"name": "{{ site.author.fullname }}",
+		"image": {
+			"@type": "ImageObject",
+			"url": "{{ site.author.image }}",
+			"width": "256",
+			"height": "256"
+		}
+	}
+}
+</script>
+<!-- thanks https://blog.google/products/assistant/your-funny-interesting-smart-and-humble-best-friend-assistant/
+http://schema.org/BlogPosting
+-->
