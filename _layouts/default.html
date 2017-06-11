@@ -7,7 +7,10 @@
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="{{ site.author.fullname }}">
   <link rel="author" href="https://plus.google.com/u/0/+{{ site.author.google }}/posts">
-  <meta name="description" content="{{ page.content | strip_html | truncatewords: 20 }}">
+  {% if layout.rtype == "post" %}
+  <!-- takes raw content -->
+  <meta name="description" content="{{ page.content | strip_html | truncatewords: 30 }}">
+  {% endif %}
 
   {% if page.title == "Home" %}
   <meta name="google-site-verification" content="{{ site.googleverify }}" />
