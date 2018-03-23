@@ -25,10 +25,6 @@
   {% endif %}
 
   <!-- HIGHLIGHTER SCRIPTS -->
-  {% if page.highlight != null %}
-  <link rel="stylesheet" href="/assets/prism/prism{% if page.hltheme == null %}-github{% else %}-{{page.hltheme}}{% endif %}.css"/>
-  <!-- <link rel="stylesheet" href="/assets/prism/prism-line-numbers.css"> -->
-  {% endif %}
 
   <!-- fonts -->
   <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro:700,400' rel='stylesheet' type='text/css'>
@@ -175,14 +171,7 @@
 
 
 <!-- JS AT THE END FOR FASTER LOAD -->
-{% if page.highlight != null %}
-<script src="/assets/prism/prism-core.min.js"></script>
-<!-- <script src="/assets/prism/prism-line-numbers.min.js"></script> -->
 
-{% for brush in page.brushes %}
-  <script src="/assets/prism/prism-{{ brush }}.js"></script>
-{% endfor %}
-{% endif %}
 
 </body>
 </html>
