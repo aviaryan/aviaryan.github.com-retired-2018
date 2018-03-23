@@ -1,0 +1,22 @@
+.overlay {
+	height: 100vh;
+	max-height: 100vh;
+	width: 100%;
+}
+
+nav.home-nav li a {
+	color: #DDD;
+}
+
+.uk-badge {
+	padding: 5px 10px;
+}
+
+
+/*
+ * Button colors
+ */
+.facebook { background: #4862a3; }
+.twitter { background: #55acee; }
+.gplus {background: #dd4c39; }
+.white { color: #EEE; }

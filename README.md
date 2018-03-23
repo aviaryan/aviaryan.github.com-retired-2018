@@ -35,7 +35,12 @@ docker kill $(docker ps -q)
 Thanks to https://github.com/Starefossen/docker-github-pages.
 
 
-### To-Do
+#### Production-local handling - 
 
-* ~~A visual representation for "Categories"~~
-* ~~GitHub and Feed button~~
+```
+{% if jekyll.environment == "local" %}
+local
+{% else %}
+prod
+{% endif %}
+```

@@ -9,7 +9,7 @@ nod: 1
 <td><a href="categories.html"><h3>Categories</h3></a></td>
 <td>
 {% for category in site.categories %}
-<a href="/blog/categories.html#{{ category | first }}"><span class="button button-cat">{{ category | first }}</span></a>
+<a href="/blog/categories.html#{{ category | first }}" class="uk-badge cat">{{ category | first }}</a>
 {% endfor %}
 </td></tr>
 
@@ -17,12 +17,12 @@ nod: 1
 <td><a href="tags.html"><h3>Tags</h3></a></td>
 <td>
 {% for tag in site.tags %}
-<a href="/blog/tags.html#{{ tag | first }}"><span class="button button-tag">{{ tag | first }}</span></a>
+<a href="/blog/tags.html#{{ tag | first }}" class="uk-badge">{{ tag | first }}</a>
 {% endfor %}
 </td></tr></table>
 
 <br><br>
 
-{% for post in site.posts reversed %}
+{% for post in site.posts %}
 	{% include archive_post.html %}
 {% endfor %}
