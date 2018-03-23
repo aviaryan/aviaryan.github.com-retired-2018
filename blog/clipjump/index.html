@@ -7,7 +7,7 @@ nod: 1
 
 {% capture cnamex %}{{ page.cname }}{% endcapture %}
 <div class="posts">
-  {% for post in site.categories[cnamex] reverse %}
+  {% for post in site.categories[cnamex] reversed %}
   {% include archive_post.html %}
   {% endfor %}
 </div>
