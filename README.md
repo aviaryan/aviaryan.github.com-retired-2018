@@ -28,6 +28,8 @@ Using Docker
 
 ```sh
 docker run -t --rm -v "$PWD":/usr/src/app -v site:/usr/src/app/_site -p "4000:4000" --env JEKYLL_ENV=local starefossen/github-pages
+# kill later
+docker kill $(docker ps -q)
 ```
 
 Thanks to https://github.com/Starefossen/docker-github-pages.
