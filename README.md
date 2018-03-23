@@ -27,7 +27,7 @@ limitations under the License.
 Using Docker
 
 ```sh
-docker run -t --rm -v "$PWD":/usr/src/app -v site:/usr/src/app/_site -p "4000:4000" starefossen/github-pages
+docker run -t --rm -v "$PWD":/usr/src/app -v site:/usr/src/app/_site -p "4000:4000" --env JEKYLL_ENV=local starefossen/github-pages
 ```
 
 Thanks to https://github.com/Starefossen/docker-github-pages.
