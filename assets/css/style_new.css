@@ -15,7 +15,16 @@ nav.home-nav li a {
 .cat:before { content: '@ ';}
 
 #data {
-	font-size: 1.15rem;
+	font-size: 1.1rem;
+}
+
+.my-message {
+	max-width: 650px;
+}
+
+.center-image img {
+	display:block;
+	margin:auto;
 }
 
 /*
@@ -36,3 +45,20 @@ nav.home-nav li a {
 .twitter { background: #55acee; }
 .gplus {background: #dd4c39; }
 .white { color: #EEE!important; }
+
+/*
+ * Media Que
+ */
+@media only screen and (max-width: 650px) {
+	.my-info {
+		flex-wrap: wrap;
+	}
+    .my-image {
+        flex-grow: 1;
+    }
+    .my-message {
+    	margin-left: 0!important;
+    	margin-top: 10px;
+    }
+}
+

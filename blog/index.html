@@ -11,7 +11,7 @@ nod: 1
     For my latest articles, please head over to my <a href="http://medium.com/aviaryan" target="_blank">Medium publication.</a></p>
 </div>
 
-<table class="inline">
+<!-- <table class="inline">
 <tr>
 <td class="uk-padding-small"><a href="categories.html"><h3>Categories</h3></a></td>
 <td class="uk-text-middle">
@@ -26,7 +26,20 @@ nod: 1
 {% for tag in site.tags %}
 <a href="/blog/tags.html#{{ tag | first }}" class="uk-badge">{{ tag | first }}</a>
 {% endfor %}
-</td></tr></table>
+</td></tr></table> -->
+
+
+<div>Avi has posted in the following <span class="uk-badge cat">categories</span> and using the following <span class="uk-badge">tags</span>.</div>
+
+
+<div class="uk-margin-top">
+{% for category in site.categories %}
+<a href="/blog/categories.html#{{ category | first }}" class="uk-badge cat">{{ category | first }}</a>
+{% endfor %}
+{% for tag in site.tags %}
+<a href="/blog/tags.html#{{ tag | first }}" class="uk-badge">{{ tag | first }}</a>
+{% endfor %}
+</div>
 
 <br><br>
 
