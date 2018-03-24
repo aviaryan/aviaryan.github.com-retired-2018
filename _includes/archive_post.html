@@ -5,7 +5,7 @@
 	{% unless forloop.first %}
 		
 	{% endunless %}
-   <br><h1 class="post-index-cat">{{ date | date: "%Y" }}</h1><br>
+   	<h3 class="uk-tile uk-tile-muted uk-text-center uk-padding-small">{{ date | date: "%Y" }}</h3>
 {% endunless %}
 	
 {% include post_in_list.html %}

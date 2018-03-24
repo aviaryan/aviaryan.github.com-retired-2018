@@ -8,10 +8,26 @@ nav.home-nav li a {
 	color: #DDD;
 }
 
+.cat {
+	background: #5A763D;
+}
+
+.cat:before { content: '@ ';}
+
+#data {
+	font-size: 1.15rem;
+}
+
+/*
+ * overrides
+ */
 .uk-badge {
 	padding: 5px 10px;
 }
 
+.uk-container-small {
+	max-width: 850px;
+}
 
 /*
  * Button colors
@@ -19,4 +35,4 @@ nav.home-nav li a {
 .facebook { background: #4862a3; }
 .twitter { background: #55acee; }
 .gplus {background: #dd4c39; }
-.white { color: #EEE; }
+.white { color: #EEE!important; }

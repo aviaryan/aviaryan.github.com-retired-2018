@@ -4,18 +4,25 @@ title: Blog Posts
 nod: 1
 ---
 
+<div class="uk-alert-warning" uk-alert>
+    <a class="uk-alert-close" uk-close></a>
+    <h3>Hey!</h3>
+    <p>I have stopped posting articles on this website now. <br>
+    For my latest articles, please head over to my <a href="http://medium.com/aviaryan" target="_blank">Medium publication.</a></p>
+</div>
+
 <table class="inline">
 <tr>
-<td><a href="categories.html"><h3>Categories</h3></a></td>
-<td>
+<td class="uk-padding-small"><a href="categories.html"><h3>Categories</h3></a></td>
+<td class="uk-text-middle">
 {% for category in site.categories %}
 <a href="/blog/categories.html#{{ category | first }}" class="uk-badge cat">{{ category | first }}</a>
 {% endfor %}
 </td></tr>
 
 <tr>
-<td><a href="tags.html"><h3>Tags</h3></a></td>
-<td>
+<td class="uk-padding-small"><a href="tags.html"><h3>Tags</h3></a></td>
+<td class="uk-text-middle">
 {% for tag in site.tags %}
 <a href="/blog/tags.html#{{ tag | first }}" class="uk-badge">{{ tag | first }}</a>
 {% endfor %}
