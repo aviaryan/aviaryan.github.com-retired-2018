@@ -13,8 +13,8 @@ You can find me on -
 * [LinkedIn](https://in.linkedin.com/in/aviaryan)
 * [Angel](https://angel.co/aviaryan)
 
-You can E-mail me at - avi(dot)aryan123(at)gmail
+You can email me at - avi(dot)aryan123(at)gmail
 
 You can telegram me at [aviaryan](http://telegram.me/aviaryan).
 
-PS - If you are a recruiter, please have a look at my [resume](https://drive.google.com/open?id=0B1I7ETQXT-TFR3NBQVVwazhnb2c).
+<!-- PS - If you are a recruiter, please have a look at my [resume](https://drive.google.com/open?id=0B1I7ETQXT-TFR3NBQVVwazhnb2c). -->
