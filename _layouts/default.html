@@ -141,7 +141,8 @@
 
     {% if layout.rtype == "post" %}
       {% if page.nod == null %}
-        {% include disqus.html %}
+        {% include disqus_notauto.html %}
+        <!-- was disqus.html -->
       {% endif %}
     {% elsif layout.rtype == "page" %}
       {% if page.nod == null %}
