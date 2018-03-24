@@ -57,7 +57,18 @@
     {% if page.title == "Home" %}
     <div class="uk-inline">
       <!-- https://www.pexels.com/photo/abstract-action-art-astronomy-262831/ -->
-      <img src="https://static.pexels.com/photos/262831/pexels-photo-262831.jpeg" class="overlay" alt="A beautiful background image that makes no sense">
+      <img src="http://aviaryan.in/downloads/static/avi_site_bg_w1500.jpg" 
+        srcset="http://aviaryan.in/downloads/static/avi_site_bg_w1500.jpg 500w,
+          http://aviaryan.in/downloads/static/avi_site_bg_w1000.jpg 1000w,
+          http://aviaryan.in/downloads/static/avi_site_bg_w1500.jpg 1500w,
+          http://aviaryan.in/downloads/static/avi_site_bg_w2000.jpg 2000w,
+          http://aviaryan.in/downloads/static/avi_site_bg_w3500.jpg 3500w"
+        sizes="(max-width: 520px) 500px,
+          (max-width: 1020px) 1000px,
+          (max-width: 1520px) 1500px,
+          (max-width: 2020px) 2000px,
+          3500px"
+        class="overlay" alt="A beautiful background image that makes no sense">
       <div class="uk-overlay uk-position-center">
         <div class="uk-flex my-info">
           <div class="my-image center-image">
