@@ -1,0 +1,64 @@
+.overlay {
+	height: 100vh;
+	max-height: 100vh;
+	width: 100%;
+}
+
+nav.home-nav li a {
+	color: #DDD;
+}
+
+.cat {
+	background: #5A763D;
+}
+
+.cat:before { content: '@ ';}
+
+#data {
+	font-size: 1.1rem;
+}
+
+.my-message {
+	max-width: 650px;
+}
+
+.center-image img {
+	display:block;
+	margin:auto;
+}
+
+/*
+ * overrides
+ */
+.uk-badge {
+	padding: 5px 10px;
+}
+
+.uk-container-small {
+	max-width: 850px;
+}
+
+/*
+ * Button colors
+ */
+.facebook { background: #4862a3; }
+.twitter { background: #55acee; }
+.gplus {background: #dd4c39; }
+.white { color: #EEE!important; }
+
+/*
+ * Media Que
+ */
+@media only screen and (max-width: 650px) {
+	.my-info {
+		flex-wrap: wrap;
+	}
+    .my-image {
+        flex-grow: 1;
+    }
+    .my-message {
+    	margin-left: 0!important;
+    	margin-top: 10px;
+    }
+}
+

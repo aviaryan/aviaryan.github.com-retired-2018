@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
   <meta charset="UTF-8">
@@ -7,9 +7,11 @@
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="{{ site.author.fullname }}">
   <link rel="author" href="https://plus.google.com/u/0/+{{ site.author.google }}/posts">
-  {% if layout.rtype == "post" %}
+  {% if layout.rtype == "post" or layout.rtype == "page" %}
   <!-- takes raw content -->
   <meta name="description" content="{{ page.content | strip_html | truncatewords: 30 }}">
+  {% else %}
+  <meta name="description" content="{{ site.description | strip_html | truncatewords: 30 }}">
   {% endif %}
 
   {% if page.title == "Home" %}
@@ -25,20 +27,18 @@
   {% endif %}
 
   <!-- HIGHLIGHTER SCRIPTS -->
-  {% if page.highlight != null %}
-  <link rel="stylesheet" href="/assets/prism/prism{% if page.hltheme == null %}-github{% else %}-{{page.hltheme}}{% endif %}.css"/>
-  <!-- <link rel="stylesheet" href="/assets/prism/prism-line-numbers.css"> -->
-  {% endif %}
 
   <!-- fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro:700,400' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:200,400,500" rel="stylesheet">
+<!--   <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro:700,400' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,400,500" rel="stylesheet"> -->
 
   <!-- stylesheets -->
   <link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/aviaryan" title="RSS feed" />
-  <link href="/assets/css/style.css" rel="stylesheet" />
-  <link href="/assets/css/colors-blue.css" rel="stylesheet" />
-  <link href="/assets/css/mojombo.css" rel="stylesheet" />
+  <link href="/assets/uikit/css/uikit.min.css" rel="stylesheet" />
+  <link href="/assets/css/style_new.css" rel="stylesheet" />
+  <!-- <link href="/assets/css/colors-blue.css" rel="stylesheet" /> -->
+  <link href="/assets/css/zenburn.css" rel="stylesheet" />
+
 
 {% include ga.html %}
 
@@ -51,28 +51,41 @@
 
 <body>
 
-  <div id="page">
+  <div class="uk-container-expand">
 
-    <div id="sidebar">
-      <nav id="navigation">
-          <div class="profile">
-              <img src="/images/profile.png" class="profile__pic"/>
-              <div class="meta">
-                  <h3 class="name text-center"><a href="/about.html">Avi Aryan</a></h3>
-              </div>
+    {% if page.title == "Home" %}
+    <div class="uk-inline">
+      <!-- https://www.pexels.com/photo/abstract-action-art-astronomy-262831/ -->
+      <img src="https://static.pexels.com/photos/262831/pexels-photo-262831.jpeg" class="overlay">
+      <div class="uk-overlay uk-position-center">
+        <div class="uk-flex my-info">
+          <div class="my-image center-image">
+            <img class="uk-border-circle" src="https://gravatar.com/avatar/4ab40e6b657e0bc91bf4961450f96420?size=200" />
           </div>
-          <!--<li><h1><a href="/about.html" style="display: inline-block; width: inherit;">Avi Aryan</a></h1></li>-->
-          <!-- <a href="/"><img src="/images/profile_128.png" height="100" width="100"></a></li> -->
-          <div class="site-links">
-              <li><a href="/">Home</a></li>
-              <li><a href="http://aviaryan.in/work" target="_blank">Portfolio</a></li>
-              <li><a href="/blog">Archive</a></li>
-              <!-- <li><a href="/softwares.html">Softwares</a></li> OUTDATED -->
-              <li><a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}" target="_blank">GitHub</a></li>
+          <div class="uk-overlay-primary uk-padding uk-margin-left my-message">
+            Hi! 👋,<br>
+            I am Avi, I like making stuff and I am planning to start my own business💰 soon enough.
+            These days, I work 💼 part-time with Udacity and Toptal.
+            I have worked with Google (gsoc) and appbase.io in the past.
           </div>
-      </nav>
+        </div>
+      </div>
 
-        <div class="latest-post">
+      <div class="uk-position-top">
+        <nav class="uk-navbar-container uk-navbar-transparent home-nav" uk-navbar>
+          {% include nav_items.html %}
+        </nav>
+      </div>
+    </div>
+    {% else %}
+    <nav class="uk-navbar-container" uk-navbar>
+      {% include nav_items.html %}
+    </nav>
+    {% endif %}
+
+          <!-- <li><a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}" target="_blank">GitHub</a></li> -->
+
+        <!-- <div class="latest-post">
             {% if layout.rtype != "post" %}
             <li class="latestposts-header">Latest Posts</li>
             {% for post in site.posts limit:5%}
@@ -80,7 +93,7 @@
                 <a href="{{ post.url }}"> <span class="latestposts">{{ post.title }}</span> </a>
             </li>
             {% endfor %}
-            <li></li>  <!-- for last line -->
+            <li></li>
             {% else %}
             {% if page.category != null %}
             <li class="navigation-header-small latestposts-header">Category</li>
@@ -95,94 +108,68 @@
                 {% endfor %}
             </li>
             {% endif %}
-        </div>
+        </div> -->
     
     <!--<br><br> &lt;!&ndash; extra space in case of small page &ndash;&gt;-->
-    </div>
 
-    {% if layout.rtype == "page" %}
+    <!-- {% if layout.rtype == "page" %}
       {% capture xcid %}xcpg{% endcapture %}
     {% else %}
       {% capture xcid %}xc{% endcapture %}
-    {% endif %}
+    {% endif %} -->
 
-   <div id="content">
-      
- <div id="rightbar">
-   <a href="/"><span class="inbutton">Home</span></a>
-   <a href="/about.html"><span class="inbutton">About</span></a>
-   <a href="/blog"><span class="inbutton">Archive</span></a>
-   <!-- <a href="/softwares.html"><span class="inbutton">Softwares</span></a> NO NEED. HIGHGLY OUTDATED-->
-    <!--<a href="{% if page.ghlink != null %}{{page.ghlink}}{% else %}http://www.github.com/{{site.author.github}}{% endif %}">
-   <span class="inbutton">GitHub</span></a>-->
-   <!-- <a href="http://feeds.feedburner.com/aviaryan"><span class="inbutton">Feed</span></a> -->
- <br><br> <!-- br here helps to capture div space so avoids heading to get that space -->
- </div>
-      
-      <br>
-    <div id="{{ xcid }}">
+   {% if page.title != "Home" %}
 
-    <header id="header">
-      <span class="header_title">
-      <h1>{{ page.title }}</h1>
-      <span class="tagline"><small>
-      {% if layout.rtype == "post" %}
-      by <a href="https://plus.google.com/u/0/+{{ site.author.google }}/posts">{{ site.author.fullname }}</a> <span style="margin: 0px 5px 0px 5px;">|</span>
-      <span class="post_date">{{ page.date | date: "%b %d, %Y" }}</span>
-      {% else %}
-      {{ page.tagline }}{% endif %}</small></span>
+   <div class="uk-container uk-container-small uk-margin-large-top">
+      
+    <header class="uk-heading-divider">
+      <h1 class="uk-h1">{{ page.title }}</h1>
+
+      <span>
+        <small>
+        {% if layout.rtype == "post" %}
+        by <a href="https://plus.google.com/u/0/+{{ site.author.google }}/posts">{{ site.author.fullname }}</a>
+        <span style="margin: 0px 5px 0px 5px;">|</span>
+        <span class="post_date">{{ page.date | date: "%b %d, %Y" }}</span>
+        {% else %}
+        {{ page.tagline }}{% endif %}
+        </small>
       </span>
     </header>
-    
-    <br><br>
 
-    {% if layout.rtype == null %}
-    <div id="data">
-     
+    <div id="data" class="uk-margin-top">
       {{ content }}
-    
     </div>
-    {% else %}
-      {{ content }}
-    {% endif %}
 
-  {% if layout.rtype == "post" %}
-    {% if page.nod == null %}
-      {% include disqus.html %}
-   {% endif %}
-  {% elsif layout.rtype == "page" %}
-    {% if page.nod == null %}
-      {% include disqus_notauto.html %}
+    {% if layout.rtype == "post" %}
+      {% if page.nod == null %}
+        {% include disqus_notauto.html %}
+        <!-- was disqus.html -->
+      {% endif %}
+    {% elsif layout.rtype == "page" %}
+      {% if page.nod == null %}
+        {% include disqus_notauto.html %}
+      {% endif %}
     {% endif %}
-  {% else %}
-    <br><br> <!-- provide blankspace, looks better -->
-  {% endif %}
-
-  <div class="clear"></div>
   
-  <br><br>
-  <footer id="footer">
-    <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.author.fullname }}
-    <br>
-    <span style="color: #8F8F8F;">Powered by <a href="http://jekyllrb.com">Jekyll</a>, Hosted on <a href="https://goo.gl/x1sZID">GitHub</a></span></p>
-  </footer>
 
-    </div>
-    </div>
+    <footer id="footer" class="uk-text-center uk-text-small uk-margin-large-top">
+      <p>Copyright &copy; {{ site.time | date: '%Y' }} {{ site.author.fullname }}<br>
+      <span style="color: #8F8F8F;">Powered by <a href="http://jekyllrb.com">Jekyll</a>, Hosted on <a href="https://goo.gl/x1sZID">GitHub</a></span></p>
+    </footer>
+
+  </div>
+
+  {% endif %}
 
 
   </div>
 
 
 <!-- JS AT THE END FOR FASTER LOAD -->
-{% if page.highlight != null %}
-<script src="/assets/prism/prism-core.min.js"></script>
-<!-- <script src="/assets/prism/prism-line-numbers.min.js"></script> -->
 
-{% for brush in page.brushes %}
-  <script src="/assets/prism/prism-{{ brush }}.js"></script>
-{% endfor %}
-{% endif %}
+<script src="/assets/uikit/js/uikit.min.js"></script>
+<script src="/assets/uikit/js/uikit-icons.min.js"></script>
 
 </body>
 </html>
