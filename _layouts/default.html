@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
   <meta charset="UTF-8">
@@ -7,9 +7,11 @@
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="{{ site.author.fullname }}">
   <link rel="author" href="https://plus.google.com/u/0/+{{ site.author.google }}/posts">
-  {% if layout.rtype == "post" %}
+  {% if layout.rtype == "post" or layout.rtype == "page" %}
   <!-- takes raw content -->
   <meta name="description" content="{{ page.content | strip_html | truncatewords: 30 }}">
+  {% else %}
+  <meta name="description" content="{{ site.description | strip_html | truncatewords: 30 }}">
   {% endif %}
 
   {% if page.title == "Home" %}
