@@ -22,9 +22,22 @@ nav.home-nav li a {
 	max-width: 650px;
 }
 
+/*
+ * utlity
+ */
+
 .center-image img {
 	display:block;
 	margin:auto;
+}
+
+.normal-link {
+	color: inherit !important;
+}
+
+.normal-link:hover {
+	color: #fff !important;
+	text-decoration: none;
 }
 
 /*
