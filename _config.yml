@@ -2,7 +2,7 @@ name: Avi Aryan
 
 markdown: kramdown
 
-fullpath: http://aviaryan.in
+fullpath: https://aviaryan.in
 description: Avi Aryan's personal website
 baseurl: 
 permalink: /blog/:categories/:title.html
@@ -26,6 +26,6 @@ author:
 
 googleverify: gC8gMLC1UpPDYi2y5KR_9Sq79n4TYMiQM7UcSvtyfms
 disqusid: avi-aryan-github
-disqusurl: http://aviaryan.in
+disqusurl: https://aviaryan.in
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 jekyllversion: 3.7.3
