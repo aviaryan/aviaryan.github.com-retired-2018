@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CapsLock status notifier
-tags: autohotkey software
+tags: autohotkey project
 ---
 
 My new laptop didn't had a CapsLock LED so I decided to make a little tool (in AutoHotkey) which shows the caps-lock status in the system tray.  
