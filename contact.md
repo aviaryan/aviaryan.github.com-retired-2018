@@ -14,7 +14,7 @@ You can find me on -
 * [LinkedIn](https://in.linkedin.com/in/aviaryan)
 * [Angel](https://angel.co/aviaryan)
 
-In case you are looking to hire me for freelance work, feel free to do so [via Toptal](https://www.toptal.com/resume/avi-aryan).
+In case you are looking to hire me for freelance work, feel free to do so [via Toptal](https://bit.ly/avitoptal).
 
 I prefer [Telegram](https://telegram.org/) for communication so if you want to talk, best telegram me at [aviaryan](https://telegram.me/aviaryan).
 
