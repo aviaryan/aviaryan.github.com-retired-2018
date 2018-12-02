@@ -1,8 +1,12 @@
-# My Site
+# My Site (Retired)
 
+> After using Jekyll for 5 years, I am now closing this site in favor of new technologies like Gatsby. The new website is at [aviaryan/aviaryan.com](https://github.com/aviaryan/aviaryan.com). Cheers! - 2/12/2018
 
 Built with Jekyll.  
-Visit [https://aviaryan.in](https://aviaryan.in)
+
+<s>Visit [https://aviaryan.in](https://aviaryan.in)</s>
+
+Visit [https://aviaryan.com](https://aviaryan.com)
   
 
 ```
